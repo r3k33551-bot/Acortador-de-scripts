@@ -41,6 +41,7 @@ local Tab2 = Window:CreateTab("MOVESETS", 15124465439) -- Title, Image
 local Tab3 = Window:CreateTab("TOOLS & MORE", 90036301110418) -- Title, Image
 local Tab4 = Window:CreateTab("HUBS", 134113410707432) -- Title, Image
 local Tab5 = Window:CreateTab("AUTOCOMBOS", 11020725921) -- Title, Image
+local Tab6 = Window:CreateTab("UNDERTALE MUSIC", 12285568530) -- Title, Image
 
 local Section = Tab1:CreateSection("LIMITED EMOTES")
 
