@@ -1,0 +1,260 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "EBHUB",
+   Icon = 120815996782931, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Cargando...",
+   LoadingSubtitle = "by WUWU",
+   ShowText = "EBHUB", -- for mobile users to unhide rayfield, change if you'd like
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   ToggleUIKeybind = "P", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Insertar Key",
+      Subtitle = "Key System",
+      Note = "Entra a discord: https://discord.gg/dyjRZgvVHx", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"THESERVERARECRAZY!"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+local Tab1 = Window:CreateTab("EMOTES", 12285568530) -- Title, Image
+local Tab2 = Window:CreateTab("MOVESETS", 15124465439) -- Title, Image
+local Tab3 = Window:CreateTab("TOOLS & MORE", 12285568530) -- Title, Image
+local Tab4 = Window:CreateTab("HUBS", 15143528856) -- Title, Image
+local Tab5 = Window:CreateTab("AUTOCOMBOS", 15114672498) -- Title, Image
+local Tab6 = Window:CreateTab("HUBS", 15143529209) -- Title, Image
+
+local Section = Tab1:CreateSection("LIMITED EMOTES")
+
+local Button = Tab1:CreateButton({
+   Name = "DIVINE FORM (AUTO EXECUTE)",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/IdkRandomUsernameok/PublicAssets/refs/heads/main/Releases/MUI.lua"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "EMERGE BUT LOW?",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Yourfavoriteguy/HAHAHHA/refs/heads/main/EmergeButLow",true))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "SUKUNA IDK",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Yourfavoriteguy/Idka3/refs/heads/main/ehhehe",true))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "SUKUNA WORLD CUTTING SLASH (EXECUTE TWO TIMES FOR MORE QUALITY)",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Yourfavoriteguy/Sukunaslash/refs/heads/main/WorldCuttingSlash",true))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Section = Tab1:CreateSection("BASICS EMOTES & ANIMATIONS")
+
+local Button = Tab1:CreateButton({
+   Name = "BASIC EMOTE GUI",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/EmoteGui/refs/heads/main/Protected_4900496055951847.lua"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "AMIMATIONS GUI",
+   Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/Mautiku/ehh/main/strong%20guest.lua.txt'))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Section = Tab2:CreateSection("SAITAMA JJK")
+
+local Button = Tab2:CreateButton({
+   Name = "GOJO V2",
+   Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-The-Strongest-Battleground-Gojo-manga-Tsb-30660"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "SUKUNA",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/damir512/whendoesbrickdie/main/tspno.txt",true))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "MEGUNA V1",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/GoofyGoof5/Meguna-Sukuna/refs/heads/main/Crispy"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "MEGUNA V2",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastefy.app/3dQB5Mv5/raw"))();
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "HAKARI",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastefy.app/R9YJF35g/raw"))();
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "ITADORI X SUKUNA",
+   Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/The-Strongest-Battlegrounds-tsb-yuji-x-sukuna-script-NOT-MINE-31459"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Section = Tab2:CreateSection("OTHERS (SAITAMA)")
+
+local Button = Tab2:CreateButton({
+   Name = "ANTI ESPIRAL",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/sparksnaps/Anti-Spiral./refs/heads/main/Lua"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "SUNG SUHO",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/sparksnaps/Sung-Suho/refs/heads/main/Lua"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "SAITAMA REWORK",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/SaitamaOverhaul/refs/heads/main/Latest.lua"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "ORBITICAL WARRIOR",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AeryAlex/Scripts/refs/heads/main/Orbitical%20Warrior%20(Obsfucted).lua"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "DUMMY",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/bNQvUpez"))();
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Section = Tab3:CreateSection("TOOLS & MORE")
+
+local Button = Tab3:CreateButton({
+   Name = "RUN TOOL",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/run%20tool.txt"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "SHADERS",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/high-shaders.txt"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "CHARACTER ESP",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ArchIsDead/Arch-Vault/refs/heads/main/tsb-char-esp.lua"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "BLOCK ESP",
+   Callback = function()
+   
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "DASH COLDOWN UI",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ArchIsDead/Arch-Vault/refs/heads/main/dash-cooldown-ui.lua"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "BUY LIMITED EMOTES",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ArchIsDead/Arch-Vault/refs/heads/main/buy-unreleased-emote.lua"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "PING ESP",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ArchIsDead/Arch-Vault/refs/heads/main/ping-esp.lua"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "GOJO EFFECTS",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/gojos%20infinity.txt"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+Rayfield:Notify({
+   Title = "AVISO",
+   Content = "esperen más act",
+   Duration = 6.5,
+   Image = 134256414823554,
+})
