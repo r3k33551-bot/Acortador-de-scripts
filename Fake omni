@@ -1,0 +1,230 @@
+-- Define the animation and sound IDs
+local animationId = "rbxassetid://12447707844"
+local soundId1 = "rbxassetid://12333042986"
+local soundId2 = "rbxassetid://12332099688"
+local soundId3 = "rbxassetid://14762034452"
+
+-- Get the local player
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Load the animation
+local humanoid = character:WaitForChild("Humanoid")
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+local animationTrack = humanoid:LoadAnimation(animation)
+
+-- Create and play the sounds
+local sound1 = Instance.new("Sound", character)
+sound1.SoundId = soundId1
+local sound2 = Instance.new("Sound", character)
+sound2.SoundId = soundId2
+local sound3 = Instance.new("Sound", character)
+sound3.SoundId = soundId3
+
+-- Play the animation and sounds
+animationTrack:Play()
+sound1:Play()
+sound2:Play()
+
+-- Wait 0.5 seconds
+wait(0.5)
+
+-- Play the third sound
+sound3:Play()
+
+
+-- Define the animation and sound IDs
+local animationId = "rbxassetid://13927612951"
+local soundIds = {
+    "rbxassetid://14742345676",
+    "rbxassetid://14328421343",
+    "rbxassetid://14328510697"
+}
+
+-- Create the tool
+local tool = Instance.new("Tool")
+tool.Name = "Fake Omni"
+tool.RequiresHandle = true
+
+-- Create the handle for the tool
+local handle = Instance.new("Part")
+handle.Name = "Handle"
+handle.Size = Vector3.new(1, 1, 1)
+handle.Parent = tool
+
+-- Create the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+-- Create the sounds
+local sounds = {}
+for _, soundId in ipairs(soundIds) do
+    local sound = Instance.new("Sound")
+    sound.SoundId = soundId
+    sound.Parent = handle
+    table.insert(sounds, sound)
+end
+
+-- Script to play animation and sounds when tool is equipped
+local function onEquipped()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+    
+    -- Load and play the animation
+    local animationTrack = humanoid:LoadAnimation(animation)
+    animationTrack:Play()
+    
+    -- Play the sounds
+    for _, sound in ipairs(sounds) do
+        sound:Play()
+    end
+end
+
+tool.Equipped:Connect(onEquipped)
+
+-- Parent the tool to the player's Backpack
+local player = game.Players.LocalPlayer
+tool.Parent = player:WaitForChild("Backpack")
+
+-- Define the animation and sound IDs
+local animationId = "rbxassetid://12983333733"
+local initialSoundIds = {
+    "rbxassetid://12981921930",
+    "rbxassetid://9126228987",
+    "rbxassetid://12981981352"
+}
+local delayedSoundIds = {
+    "rbxassetid://9113694796",
+    "rbxassetid://12982187957",
+    "rbxassetid://12982132685"
+}
+
+-- Create the tool
+local tool = Instance.new("Tool")
+tool.Name = "Not so serious now, huh?"
+tool.RequiresHandle = true
+
+-- Create the handle for the tool
+local handle = Instance.new("Part")
+handle.Name = "Handle"
+handle.Size = Vector3.new(1, 1, 1)
+handle.Parent = tool
+
+-- Create the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+-- Create the initial sounds
+local initialSounds = {}
+for _, soundId in ipairs(initialSoundIds) do
+    local sound = Instance.new("Sound")
+    sound.SoundId = soundId
+    sound.Parent = handle
+    table.insert(initialSounds, sound)
+end
+
+-- Create the delayed sounds
+local delayedSounds = {}
+for _, soundId in ipairs(delayedSoundIds) do
+    local sound = Instance.new("Sound")
+    sound.SoundId = soundId
+    sound.Parent = handle
+    table.insert(delayedSounds, sound)
+end
+
+-- Script to play animation and sounds when tool is equipped
+local function onEquipped()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+    
+    -- Load and play the animation
+    local animationTrack = humanoid:LoadAnimation(animation)
+    animationTrack:Play()
+    
+    -- Play the initial sounds
+    for _, sound in ipairs(initialSounds) do
+        sound:Play()
+    end
+    
+    
+    wait(6)
+    
+    -- Play the delayed sounds
+    for _, sound in ipairs(delayedSounds) do
+        sound:Play()
+    end
+end
+
+tool.Equipped:Connect(onEquipped)
+
+-- Parent the tool to the player's Backpack
+local player = game.Players.LocalPlayer
+tool.Parent = player:WaitForChild("Backpack")
+
+
+-- Define the animation and sound IDs
+local animationId = "rbxassetid://11365563255"
+local soundId = "rbxassetid://14841861836"
+
+-- Create the tool
+local tool = Instance.new("Tool")
+tool.Name = "Table fix (Fake table flip)"
+tool.RequiresHandle = false
+
+-- Create the handle for the tool
+local handle = Instance.new("Part")
+handle.Name = "Handle"
+handle.Size = Vector3.new(1, 1, 1)
+handle.Parent = tool
+
+-- Create the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+-- Create the sound
+local sound = Instance.new("Sound")
+sound.SoundId = soundId
+sound.Parent = handle
+
+-- Script to play animation and sound when tool is equipped
+local function onEquipped()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+    
+    -- Load and play the animation
+    local animationTrack = humanoid:LoadAnimation(animation)
+    animationTrack:Play()
+    
+    -- Play the sound
+    sound:Play()
+end
+
+tool.Equipped:Connect(onEquipped)
+
+-- Parent the tool to the player's Backpack
+local player = game.Players.LocalPlayer
+tool.Parent = player:WaitForChild("Backpack")
+
+
+-- Create the ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.CoreGui
+
+-- Create the TextButton
+local textButton = Instance.new("TextButton")
+textButton.Size = UDim2.new(0, 200, 0, 50)
+textButton.Position = UDim2.new(1, -210, 0, 10) -- Top-right corner
+textButton.Text = "dc"
+textButton.Parent = screenGui
+
+-- Function to execute the loadstring
+local function executeScript()
+    loadstring(game:HttpGet('https://pastebin.com/raw/fMBWLYNE'))()
+end
+
+-- Connect the button click to the function
+textButton.MouseButton1Click:Connect(executeScript)
