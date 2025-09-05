@@ -166,22 +166,6 @@ local Button = Tab2:CreateButton({
    end,
 })
 
-local Button = Tab:CreateButton({
-   Name = "KASHIMO",
-   Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/damir512/Kashimo/main/Protected_7491278457865044.txt"))()
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "MEGUMI JJS",
-   Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/Kamyk-player/saitamatoMegumitenshadows/refs/heads/main/TENSHADOWSMAHORAGAULT"))()
-   -- The function that takes place when the button is pressed
-   end,
-})
-
 local Section = Tab2:CreateSection("OTHERS (SAITAMA)")
 
 local Button = Tab2:CreateButton({
@@ -379,50 +363,6 @@ local Button = Tab2:CreateButton({
    Name = "SANS MOVESET",
    Callback = function()
        loadstring(game:HttpGet("https://paste.ee/r/rF9d3"))()
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Section = Tab2:CreateSection("GAROU MOVESETS")
-
-
-local Button = Tab2:CreateButton({
-   Name = "OKARUN",
-   Callback = function()
-       loadstring(game:HttpGet"https://paste.ee/r/Pn4oj")()
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = Tab2:CreateButton({
-   Name = "AKAZA",
-   Callback = function()
-       loadstring(game:HttpGet("https://paste.ee/r/zzvAH"))()
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = Tab2:CreateButton({
-   Name = "ATRAIN",
-   Callback = function()
-       loadstring(game:HttpGet("https://paste.ee/r/AnZ5j"))()
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = Tab2:CreateButton({
-   Name = "KIZARU",
-   Callback = function()
-       loadstring(game:HttpGet("https://paste.ee/r/NPnfk"))()
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = Tab2:CreateButton({
-   Name = "DEKU",
-   Callback = function()
-       
-       loadstring(game:HttpGet("https://pastebin.com/raw/xKextYP5"))()
    -- The function that takes place when the button is pressed
    end,
 })
