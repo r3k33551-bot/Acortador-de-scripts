@@ -1,0 +1,32 @@
+-- R3Z4Ns Teleport Tool Script
+local ToolName = "R3Z4Ns TP TOOL"
+
+local function createTool()
+    -- Create the tool
+    local tool = Instance.new("Tool")
+    tool.Name = ToolName
+    tool.RequiresHandle = false
+    tool.CanBeDropped = false
+
+    -- Add the tool to the player’s backpack
+    tool.Parent = game.Players.LocalPlayer.Backpack
+
+    -- Teleport on activation
+    tool.Activated:Connect(function()
+        local player = game.Players.LocalPlayer
+        local mouse = player:GetMouse()
+        local targetPos = mouse.Hit.p
+
+        -- Teleport the player to the mouse position
+        player.Character:MoveTo(targetPos)
+    end)
+end
+
+-- Function to handle respawning the tool
+local function onCharacterAdded(character)
+    createTool()
+end
+
+-- Set up tool and handle respawning
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+createTool()
