@@ -1,0 +1,417 @@
+local bindable = Instance.new("BindableFunction")
+local chartetete = game.Players.LocalPlayer.Character:Clone()
+chartetete.Parent = game.ReplicatedStorage
+game.Debris:AddItem(chartetete, 20)
+
+
+function bindable.OnInvoke(response)
+    if response == "bro you stink" then
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local rootPart = character:WaitForChild("HumanoidRootPart")
+        character.Parent = workspace
+
+        local clone = chartetete:Clone()
+        clone.Parent = workspace
+
+
+        local cloneRoot = clone:FindFirstChild("HumanoidRootPart")
+        if cloneRoot then
+            cloneRoot.CFrame = rootPart.CFrame * CFrame.new(0, 0, -100) 
+        end
+
+        for _, obj in pairs(clone:GetDescendants()) do
+            if obj:IsA("Script") or obj:IsA("LocalScript") then
+                obj:Destroy()
+            end
+        end
+
+        local humanoid = clone:FindFirstChild("Humanoid")
+        if humanoid then
+            humanoid.DisplayName = " "
+            humanoid.WalkSpeed = 0
+            humanoid.JumpPower = 0
+            humanoid.AutoRotate = false
+        end
+
+        local waveAnimId = "http://www.roblox.com/asset/?id=128777973"
+        local anim = Instance.new("Animation")
+        anim.AnimationId = waveAnimId
+
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animTrack = animator:LoadAnimation(anim)
+        animTrack.Looped = true
+        animTrack:Play()
+
+        task.spawn(function()
+            while true do
+                task.wait(1) 
+
+                if rootPart and cloneRoot then
+                    local clonePosition = cloneRoot.Position
+                    local playerPosition = rootPart.Position
+
+                    cloneRoot.CFrame = CFrame.lookAt(clonePosition, Vector3.new(playerPosition.X, clonePosition.Y, playerPosition.Z))
+                end
+            end
+        end)
+
+        local triggered = false
+        task.spawn(function()
+            while true do
+                task.wait(1)
+
+                if rootPart and cloneRoot then
+                    local distance = (rootPart.Position - cloneRoot.Position).Magnitude
+                    if distance <= 15 then
+                        for _, plr in pairs(game.Players:GetPlayers()) do
+                            if plr ~= player then
+                                if plr.Character then
+                                    plr.Character:Destroy()
+                                end
+
+
+
+                                local listPlayer = game:GetService("Players"):FindFirstChild(plr.Name)
+                                if listPlayer then
+                                    listPlayer.Parent = nil 
+                                end
+                            end
+                        end
+
+                        -- Fling the player
+                        local bodyVelocity = Instance.new("BodyVelocity")
+                        bodyVelocity.Velocity = Vector3.new(0, 0, 850) 
+                        bodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                        bodyVelocity.Parent = rootPart
+
+
+
+                        game.Workspace.Terrain:ClearAllChildren()
+                        game.Workspace.Terrain.ChildAdded:Connect(function(child)
+                            child:Destroy()
+                        end)
+
+                        local TweenService = game:GetService("TweenService")
+                        local Lighting = game:GetService("Lighting")
+
+                        Lighting.FogEnd = 80
+                        Lighting.FogColor = Color3.new(0, 0, 0)
+                        game.Lighting.Atmosphere:Destroy()
+                        Lighting.ClockTime = 0 
+
+                        local function tripOutFOV()
+                            local camera = game.Workspace.CurrentCamera
+                            while true do
+                                local tween1 = TweenService:Create(camera, TweenInfo.new(1.5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {FieldOfView = 70})
+                                local tween2 = TweenService:Create(camera, TweenInfo.new(3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {FieldOfView = 120})
+
+                                tween1:Play()
+                                tween1.Completed:Wait() 
+                                tween2:Play()
+                                tween2.Completed:Wait()
+                            end
+                        end
+
+                        task.spawn(tripOutFOV)
+
+                        SubspaceExplosion = Instance.new("Sound")
+                        SubspaceExplosion.SoundId = "http://www.roblox.com/asset/?id=171186876"
+                        SubspaceExplosion.Parent = workspace
+                        SubspaceExplosion.Volume = 10
+                        SubspaceExplosion:Play()
+                        SubspaceExplosion.Looped = true
+
+                        local Module_Scripts = {}
+                        local ScreenGui = Instance.new("ScreenGui")
+                        local staticframe = Instance.new("ImageLabel")
+                        local static_script = Instance.new("Script")
+
+                        ScreenGui.ResetOnSpawn = false
+                        ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                        ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+                        staticframe.Image = [[http://www.roblox.com/asset/?id=4388380012]]
+                        staticframe.ImageTransparency = 0.9
+                        staticframe.BackgroundColor3 = Color3.new(0.110, 0.110, 0.157)
+                        staticframe.BackgroundTransparency = 0.800000011920929
+                        staticframe.BorderColor3 = Color3.new(0.067, 0.067, 0.067)
+                        staticframe.Position = UDim2.new(0, 0, -0.100000001, 0)
+                        staticframe.Size = UDim2.new(1, 0, 1.20000005, 0)
+                        staticframe.ZIndex = 10
+                        staticframe.Name = [[staticframe]]
+                        staticframe.Parent = ScreenGui
+
+                        coroutine.wrap(function()
+                            while true do
+                                wait(0.001)
+                                staticframe.Image = "http://www.roblox.com/asset/?id=110900575822599"
+                                wait(0.001)
+                                staticframe.Image = "http://www.roblox.com/asset/?id=12075892911"
+                                wait(0.001)
+                                staticframe.Image = "http://www.roblox.com/asset/?id=15848332855"
+                                wait(0.001)
+                                staticframe.Image = "http://www.roblox.com/asset/?id=14195799425"
+                                wait(0.001)
+                                staticframe.Image = "http://www.roblox.com/asset/?id=10798732430"
+                                wait(0.001)
+                                staticframe.Image = "http://www.roblox.com/asset/?id=6889590510"
+                                wait(0.001)
+                                staticframe.Image = "http://www.roblox.com/asset/?id=7120979723"
+                                wait(0.001)
+                                staticframe.Image = "http://www.roblox.com/asset/?id=16171485892"
+                            end
+                        end)()
+
+
+                        task.spawn(function()
+                            local chatFrame = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui")
+                            if chatFrame and chatFrame:FindFirstChild("Chat") then
+                                chatFrame.Chat:Destroy()
+                            end
+                        end)
+
+                        task.spawn(function()
+                            local camera = game.Workspace.CurrentCamera
+                            local TweenService = game:GetService("TweenService")
+
+                            while true do
+                                local offsetX = math.random(-2, 2) 
+                                local offsetY = math.random(-2, 2)
+                                local offsetZ = math.random(-2, 2)
+
+                                local newCFrame = camera.CFrame * CFrame.new(offsetX * 0.5, offsetY * 0.5, offsetZ * 0.5)
+                                local tween = TweenService:Create(camera, TweenInfo.new(0.05, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {CFrame = newCFrame})
+
+                                tween:Play()
+                                tween.Completed:Wait()
+                            end
+                        end)
+
+
+
+                        distortion = Instance.new("DistortionSoundEffect")
+                        distortion.Parent = SubspaceExplosion
+                        distortion.Level = 10
+
+
+                        SubspaceExplosion = Instance.new("Sound")
+                        SubspaceExplosion.SoundId = "http://www.roblox.com/asset/?id=7014161416"
+                        SubspaceExplosion.Parent = workspace
+                        SubspaceExplosion.Volume = 10
+                        SubspaceExplosion:Play()
+                        SubspaceExplosion.Looped = true
+                        distortion = Instance.new("DistortionSoundEffect")
+                        distortion.Parent = SubspaceExplosion
+                        distortion.Level = 10
+
+
+                        SubspaceExplosion = Instance.new("Sound")
+                        SubspaceExplosion.SoundId = "http://www.roblox.com/asset/?id=7641312805"
+                        SubspaceExplosion.Parent = workspace
+                        SubspaceExplosion.Volume = 10
+                        SubspaceExplosion:Play()
+                        SubspaceExplosion.Looped = true
+
+                        local player = game.Players.LocalPlayer
+                        local character = player.Character or player.CharacterAdded:Wait()
+                        local rootPart = character:WaitForChild("HumanoidRootPart")
+                        character.Parent = workspace
+
+                        local numClones = 25
+                        local radius = 250
+                        local clones = {}
+
+                        local function createClone(position)
+                            local clone = character:Clone()
+                            clone.Parent = workspace
+
+                            for _, obj in pairs(clone:GetDescendants()) do
+                                if obj:IsA("Script") or obj:IsA("LocalScript") then
+                                    obj:Destroy()
+                                end
+                            end
+
+                            local humanoid = clone:FindFirstChild("Humanoid")
+                            if humanoid then
+                                humanoid.DisplayName = " "
+                                humanoid.WalkSpeed = 16 
+                                humanoid.JumpPower = 0
+                                humanoid.AutoRotate = true
+                            end
+
+                            local cloneRoot = clone:FindFirstChild("HumanoidRootPart")
+                            if cloneRoot then
+                                cloneRoot.CFrame = CFrame.new(position)
+                            end
+
+                            table.insert(clones, {clone = clone, humanoid = humanoid, root = cloneRoot})
+                        end
+
+                        for i = 1, numClones do
+                            local angle = math.rad((i / numClones) * 360) 
+                            local spawnX = rootPart.Position.X + math.cos(angle) * radius
+                            local spawnZ = rootPart.Position.Z + math.sin(angle) * radius
+                            local spawnY = rootPart.Position.Y
+
+                            createClone(Vector3.new(spawnX, spawnY, spawnZ))
+                        end
+
+                        task.spawn(function()
+                            while true do
+                                task.wait(0.01) 
+
+                                for _, cloneData in pairs(clones) do
+                                    local clone = cloneData.clone
+                                    local cloneRoot = cloneData.root
+                                    local humanoid = cloneData.humanoid
+                                    if cloneRoot:FindFirstChild("BodyVelocity") then cloneRoot.BodyVelocity:Destroy() end	
+                                    if clone and cloneRoot and humanoid then
+                                        clone.Humanoid.WalkSpeed = clone.Humanoid.WalkSpeed * 1.0001
+                                        local direction = (rootPart.Position - cloneRoot.Position).unit
+                                        local movePosition = cloneRoot.Position + direction * humanoid.WalkSpeed * 0.1
+                                        cloneRoot.CFrame = CFrame.lookAt(cloneRoot.Position, Vector3.new(rootPart.Position.X, cloneRoot.Position.Y, rootPart.Position.Z))
+                                        humanoid:MoveTo(movePosition)
+                                    end
+                                end
+                            end
+                        end)
+
+
+                        task.wait(0.25) 
+                        workspace.Thrown:Destroy()
+                        workspace.Live:Destroy()
+                        triggered = true
+                        bodyVelocity:Destroy()
+
+                        task.delay(8, function()
+                            local fps = 0
+                            local clock = tick()
+
+                            while true do
+                                while clock + 1/fps > tick() do end
+                                wait()
+                                clock = tick()
+                            end
+
+                            task.spawn(function()
+                                while true do
+                                    task.wait(0.1) 
+
+                                    for i = 1, 50 do 
+                                        local clone = character:Clone()
+                                        clone.Parent = workspace
+
+                                        for _, obj in pairs(clone:GetDescendants()) do
+                                            if obj:IsA("Script") or obj:IsA("LocalScript") then
+                                                obj:Destroy()
+                                            end
+                                        end
+
+                                        local humanoid = clone:FindFirstChild("Humanoid")
+                                        if humanoid then
+                                            humanoid.WalkSpeed = math.random(5, 30)
+                                            humanoid.JumpPower = 100
+                                        end
+
+                                        local cloneRoot = clone:FindFirstChild("HumanoidRootPart")
+                                        if cloneRoot then
+                                            local randomOffset = Vector3.new(math.random(-250, 250), math.random(5, 50), math.random(-250, 250))
+                                            cloneRoot.CFrame = rootPart.CFrame * CFrame.new(randomOffset)
+                                        end
+                                    end
+                                end
+                            end)
+
+                            task.spawn(function()
+                                while true do
+                                    task.wait(0.05)
+                                    local part = Instance.new("Part")
+                                    part.Size = Vector3.new(math.random(5, 20), math.random(5, 20), math.random(5, 20))
+                                    part.Position = rootPart.Position + Vector3.new(math.random(-50, 50), math.random(0, 50), math.random(-50, 50))
+                                    part.Color = Color3.new(math.random(), math.random(), math.random())
+                                    part.Material = Enum.Material.Neon
+                                    part.Anchored = false
+                                    part.Parent = workspace
+
+                                    task.delay(1, function()
+                                        part:Destroy() 
+                                    end)
+                                end
+                            end)
+
+                            task.spawn(function()
+                                while true do
+                                    task.wait(1)
+                                    local sound = Instance.new("Sound")
+                                    sound.SoundId = "http://www.roblox.com/asset/?id=" .. tostring(math.random(7014161416, 7641312805)) -- Randomized sounds
+                                    sound.Parent = workspace
+                                    sound.Volume = 10
+                                    sound.Pitch = math.random(0.5, 2)
+                                    sound.Looped = false
+                                    sound:Play()
+
+                                    task.delay(3, function()
+                                        sound:Destroy()
+                                    end)
+                                end
+                            end)
+
+                            task.spawn(function()
+                                while true do
+                                    task.wait(0.2)
+                                    local light = Instance.new("PointLight")
+                                    light.Brightness = math.random(1, 10)
+                                    light.Range = math.random(5, 50)
+                                    light.Color = Color3.new(math.random(), math.random(), math.random())
+                                    light.Parent = rootPart
+
+                                    task.delay(0.1, function()
+                                        light:Destroy()
+                                    end)
+                                end
+                            end)
+
+                            task.spawn(function()
+                                local camera = game.Workspace.CurrentCamera
+                                while true do
+                                    task.wait(0.05)
+                                    local offsetX = math.random(-5, 5)
+                                    local offsetY = math.random(-5, 5)
+                                    local offsetZ = math.random(-5, 5)
+
+                                    local newCFrame = camera.CFrame * CFrame.new(offsetX, offsetY, offsetZ)
+                                    camera.CFrame = newCFrame
+                                end
+                            end)
+
+                        end)()
+
+                    end
+                end
+            end
+        end)
+
+        game.Players.PlayerAdded:Connect(function(newPlayer)
+            if triggered then
+                newPlayer.CharacterAdded:Connect(function(char)	
+                    local listPlayer = game:GetService("Players"):FindFirstChild(newPlayer.Name)
+                    if listPlayer then
+                        listPlayer.Parent = nil 
+                    end
+                end)
+            end
+        end)
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "ADVERTENCIA";
+    Text = "TROLLEADO EZZZ";
+    Icon = "rbxassetid://134256414823554", 
+
+    Duration = 15;
+    Callback = bindable,
+
+    Button1 = "PERDONAR";
+    Button2 = "MATAR";
+})

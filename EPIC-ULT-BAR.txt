@@ -1,0 +1,104 @@
+local player = game.Players.LocalPlayer
+	local char = player.Character
+	local Humanoid = char.Humanoid
+	local hot = player.PlayerGui:WaitForChild("Hotbar")
+	local hotbar = hot:WaitForChild("Backpack"):WaitForChild("Hotbar")
+
+	local function cloneToolName(slot, text)
+		local toolName = slot.ToolName
+		if not slot:FindFirstChild("CustomName") then
+			toolName.Visible = false
+			local clone = toolName:Clone()
+			clone.Name = "CustomName"
+			clone.Parent = slot
+			clone.Text = text
+			clone.Visible = true
+		elseif slot:FindFirstChild("CustomName") then
+			if slot:FindFirstChild("CustomName").Text ~= text then
+				toolName.Visible = false
+				slot:FindFirstChild("CustomName").Text = text
+			end
+		end
+	end
+
+	local magichealth = player.PlayerGui:WaitForChild("Bar"):WaitForChild("MagicHealth")
+	local UltLabel = magichealth:WaitForChild("TextLabel")
+	UltLabel.Visible = false
+	local UltLabel = UltLabel:Clone()
+	UltLabel.Visible = true
+	UltLabel.Name = "UltThing"
+	UltLabel.Parent = magichealth
+
+	local toolNameMap = {
+	["Original_Name"] = "Replacement_Name",
+	["Original_Name"] = "Replacement_Name",
+	["Original_Name"] = "Replacement_Name",
+        ["Original_Name"] = "Replacement_Name",
+        ["Original_Namer"] = "Replacement_Name",
+        ["Original_Name"] = "Replacement_Name",
+        ["Original_Name"] = "Replacement_Name",
+        ["Original_Name"] = "Replacement_Name",
+	}
+
+	local function typeText(label, text, delay)
+		delay = delay or 0.05
+		local originalText = text
+		label.Text = ""
+		for i = 1, #originalText do
+			label.Text = string.sub(originalText, 1, i)
+			task.wait(delay)
+		end
+	end
+	local ultTexts = {
+	"+10000 AURA",
+	"SE ME PARO",
+        "You can place multiple names fror ult"
+	}
+
+
+	local typedTools = {}
+
+	local function updateToolNames()
+		for _, slot in ipairs(hotbar:GetChildren()) do
+			if slot:FindFirstChild("Base") and slot.Base:FindFirstChild("ToolName") then
+				local toolNameText = slot.Base.ToolName.Text
+				local newName = toolNameMap[toolNameText]
+				if newName then
+					cloneToolName(slot.Base, newName)
+					if slot.Base:FindFirstChild("CustomName") and not typedTools[newName] then
+						typeText(slot.Base.CustomName, newName, 0.03)
+						typedTools[newName] = true
+
+
+					end
+				end
+			end
+		end
+	end
+
+	task.spawn(
+		function()
+			local currentUltIndex = 1
+
+			while true do
+				typeText(UltLabel, ultTexts[currentUltIndex], 0.05)
+				currentUltIndex = (currentUltIndex % #ultTexts) + 1
+
+				pcall(
+					function()
+					end
+				)
+
+				updateToolNames()
+				task.wait(10)
+			end
+		end
+	)
+
+	task.spawn(
+		function()
+			while task.wait(1) do
+				updateToolNames()
+			end
+		end
+	)
