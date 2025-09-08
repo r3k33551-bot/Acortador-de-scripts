@@ -1,0 +1,544 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Create the BillboardGui
+local billboardGui = Instance.new("BillboardGui")
+billboardGui.Parent = character.Head
+billboardGui.Size = UDim2.new(6, 0, 2, 0) -- Made larger for the bigger text
+billboardGui.StudsOffset = Vector3.new(0, 3, 0) -- Position above the head
+billboardGui.AlwaysOnTop = true
+
+-- Create the TextLabel
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Parent = billboardGui
+titleLabel.Size = UDim2.new(1, 0, 1, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "👽"
+titleLabel.Font = Enum.Font.GothamBold
+titleLabel.TextSize = 36 -- Increased text size
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- White color
+
+-- Smooth Tilt Animation
+local tiltDirection = 1
+local tiltAmount = 10 -- Degrees to tilt
+local tiltSpeed = 0.4 -- Even slower tilt speed
+
+-- Coroutine to handle the tilting effect
+coroutine.wrap(function()
+    while billboardGui.Parent do
+        titleLabel.Rotation = tiltAmount * tiltDirection
+        wait(tiltSpeed)
+        tiltDirection = -tiltDirection -- Swap direction
+    end
+end)()
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Create the land animation
+local LandAnimation = Instance.new("Animation")
+LandAnimation.AnimationId = "rbxassetid://0"  -- Jump animation ID
+local LandAnimTrack = humanoid:LoadAnimation(LandAnimation)
+
+-- Function to play the land animation when player lands
+local function onLand()
+    if not LandAnimTrack.IsPlaying then
+        LandAnimTrack:Play()
+        LandAnimTrack.TimePosition = 1.2  -- Start at 1 second
+        LandAnimTrack:AdjustSpeed(0.3)  -- Play at 0.3x speed
+
+        -- Stop the animation after 0.6 seconds
+        task.delay(0.6, function()
+            LandAnimTrack:Stop()
+        end)
+    end
+end
+
+-- Listen for state changes in the Humanoid (detect when player lands)
+humanoid.StateChanged:Connect(function(_, newState)
+    if newState == Enum.HumanoidStateType.Landed then
+        onLand()
+    end
+end)
+
+
+
+-- Place this script in StarterPlayerScripts or a LocalScript within StarterCharacterScripts
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Animation for jumping
+local jumpAnimation = Instance.new("Animation")
+jumpAnimation.AnimationId = "rbxassetid://0"  -- Jump animation ID
+
+-- Load the jump animation
+local jumpAnimTrack = humanoid:LoadAnimation(jumpAnimation)
+
+-- Function to play the jump animation when player jumps
+local function onJump()
+    if not jumpAnimTrack.IsPlaying then
+        jumpAnimTrack:Play()
+        jumpAnimTrack.TimePosition = 0 -- Start at 1.2 seconds
+        jumpAnimTrack:AdjustSpeed(1)    -- Play at 0.1x speed
+
+        -- Stop the animation after 0.5 seconds
+        task.delay(0.6, function()
+            jumpAnimTrack:Stop()
+        end)
+    end
+end
+
+-- Connect the Jumping event to play the animation
+humanoid.Jumping:Connect(onJump)
+
+
+
+
+
+-- Place this script in StarterPlayerScripts or a LocalScript within StarterCharacterScripts
+
+-- Variables
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Animation IDs
+local idleAnimationId = "0"  -- Idle animation
+local stopAnimationId = "180435571"   -- Not used but kept for reference
+
+-- Create Animation objects
+local idleAnimation = Instance.new("Animation")
+idleAnimation.AnimationId = "rbxassetid://" .. idleAnimationId
+
+-- Load the Idle Animation
+local idleAnimTrack = humanoid:LoadAnimation(idleAnimation)
+
+-- Set idle animation to loop
+idleAnimTrack.Looped = true
+
+-- Function to check walking status
+local function updateAnimation()
+    -- Check if the humanoid is moving
+    if humanoid.MoveDirection.Magnitude > 0 then
+        -- Stop the idle animation when walking
+        if idleAnimTrack.IsPlaying then
+            idleAnimTrack:Stop()
+        end
+    else
+        -- Play idle animation if not playing
+        if not idleAnimTrack.IsPlaying then
+            idleAnimTrack:Play()
+        end
+    end
+end
+
+-- Connect the function to the Humanoid's StateChanged event
+humanoid.StateChanged:Connect(function(_, newState)
+    -- Only check for movement when not in certain states
+    if newState ~= Enum.HumanoidStateType.Dead and newState ~= Enum.HumanoidStateType.FallingDown then
+        updateAnimation()
+    end
+end)
+
+-- Monitor move direction continuously
+game:GetService("RunService").Heartbeat:Connect(function()
+    updateAnimation()
+end)
+
+-- Start the idle animation when the game starts
+idleAnimTrack:Play()
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Create the land animation
+local LandAnimation = Instance.new("Animation")
+LandAnimation.AnimationId = "rbxassetid://0"  -- Jump animation ID
+local LandAnimTrack = humanoid:LoadAnimation(LandAnimation)
+
+-- Function to play the land animation when player lands
+local function onLand()
+    if not LandAnimTrack.IsPlaying then
+        LandAnimTrack:Play()
+        LandAnimTrack.TimePosition = 1.2  -- Start at 1 second
+        LandAnimTrack:AdjustSpeed(0.3)  -- Play at 0.3x speed
+
+        -- Stop the animation after 0.6 seconds
+        task.delay(0.6, function()
+            LandAnimTrack:Stop()
+        end)
+    end
+end
+
+-- Listen for state changes in the Humanoid (detect when player lands)
+humanoid.StateChanged:Connect(function(_, newState)
+    if newState == Enum.HumanoidStateType.Landed then
+        onLand()
+    end
+end)
+
+
+
+-- Place this script in StarterPlayerScripts or a LocalScript within StarterCharacterScripts
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Animation for jumping
+local jumpAnimation = Instance.new("Animation")
+jumpAnimation.AnimationId = "rbxassetid://0"  -- Jump animation ID
+
+-- Load the jump animation
+local jumpAnimTrack = humanoid:LoadAnimation(jumpAnimation)
+
+-- Function to play the jump animation when player jumps
+local function onJump()
+    if not jumpAnimTrack.IsPlaying then
+        jumpAnimTrack:Play()
+        jumpAnimTrack.TimePosition = 0 -- Start at 1.2 seconds
+        jumpAnimTrack:AdjustSpeed(1)    -- Play at 0.1x speed
+
+        -- Stop the animation after 0.5 seconds
+        task.delay(0.6, function()
+            jumpAnimTrack:Stop()
+        end)
+    end
+end
+
+-- Connect the Jumping event to play the animation
+humanoid.Jumping:Connect(onJump)
+
+
+
+
+
+-- Place this script in StarterPlayerScripts or a LocalScript within StarterCharacterScripts
+
+-- Variables
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Animation IDs
+local idleAnimationId = "0"  -- Idle animation
+local stopAnimationId = "180435571"   -- Not used but kept for reference
+
+-- Create Animation objects
+local idleAnimation = Instance.new("Animation")
+idleAnimation.AnimationId = "rbxassetid://180167640" .. idleAnimationId
+
+-- Load the Idle Animation
+local idleAnimTrack = humanoid:LoadAnimation(idleAnimation)
+
+-- Set idle animation to loop
+idleAnimTrack.Looped = true
+
+-- Function to check walking status
+local function updateAnimation()
+    -- Check if the humanoid is moving
+    if humanoid.MoveDirection.Magnitude > 0 then
+        -- Stop the idle animation when walking
+        if idleAnimTrack.IsPlaying then
+            idleAnimTrack:Stop()
+        end
+    else
+        -- Play idle animation if not playing
+        if not idleAnimTrack.IsPlaying then
+            idleAnimTrack:Play()
+        end
+    end
+end
+
+-- Connect the function to the Humanoid's StateChanged event
+humanoid.StateChanged:Connect(function(_, newState)
+    -- Only check for movement when not in certain states
+    if newState ~= Enum.HumanoidStateType.Dead and newState ~= Enum.HumanoidStateType.FallingDown then
+        updateAnimation()
+    end
+end)
+
+-- Monitor move direction continuously
+game:GetService("RunService").Heartbeat:Connect(function()
+    updateAnimation()
+end)
+
+-- Start the idle animation when the game starts
+idleAnimTrack:Play()
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://182436935"
+
+local animationTrack = humanoid:LoadAnimation(animation)
+
+animationTrack:Play()
+animationTrack.TimePosition = 0 -- Start at 1 second
+animationTrack:AdjustSpeed(0.4)  -- Set the speed to 0.01
+
+-- Stop the animation at 5 seconds
+task.delay(500000000000000000000, function()
+    animationTrack:Stop()
+end)
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Create the land animation
+local LandAnimation = Instance.new("Animation")
+LandAnimation.AnimationId = "rbxassetid://0"  -- Jump animation ID
+local LandAnimTrack = humanoid:LoadAnimation(LandAnimation)
+
+-- Function to play the land animation when player lands
+local function onLand()
+    if not LandAnimTrack.IsPlaying then
+        LandAnimTrack:Play()
+        LandAnimTrack.TimePosition = 1.2  -- Start at 1 second
+        LandAnimTrack:AdjustSpeed(0.3)  -- Play at 0.3x speed
+
+        -- Stop the animation after 0.6 seconds
+        task.delay(0.6, function()
+            LandAnimTrack:Stop()
+        end)
+    end
+end
+
+-- Listen for state changes in the Humanoid (detect when player lands)
+humanoid.StateChanged:Connect(function(_, newState)
+    if newState == Enum.HumanoidStateType.Landed then
+        onLand()
+    end
+end)
+
+
+
+-- Place this script in StarterPlayerScripts or a LocalScript within StarterCharacterScripts
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Animation for jumping
+local jumpAnimation = Instance.new("Animation")
+jumpAnimation.AnimationId = "rbxassetid://97171309"  -- Jump animation ID
+
+-- Load the jump animation
+local jumpAnimTrack = humanoid:LoadAnimation(jumpAnimation)
+
+-- Function to play the jump animation when player jumps
+local function onJump()
+    if not jumpAnimTrack.IsPlaying then
+        jumpAnimTrack:Play()
+        jumpAnimTrack.TimePosition = 0 -- Start at 1.2 seconds
+        jumpAnimTrack:AdjustSpeed(1.5)    -- Play at 0.1x speed
+
+        -- Stop the animation after 0.5 seconds
+        task.delay(5, function()
+            jumpAnimTrack:Stop()
+        end)
+    end
+end
+
+-- Connect the Jumping event to play the animation
+humanoid.Jumping:Connect(onJump)
+
+
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://94108418"
+
+local animationTrack = humanoid:LoadAnimation(animation)
+
+animationTrack:Play()
+animationTrack.TimePosition = 0 -- Start at 1 second
+animationTrack:AdjustSpeed(0.4)  -- Set the speed to 0.01
+
+-- Stop the animation at 5 seconds
+task.delay(500000000000000000000, function()
+    animationTrack:Stop()
+end)
+
+
+
+
+-- Place this script in StarterPlayerScripts or a LocalScript within StarterCharacterScripts
+
+-- Variables
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Animation IDs
+local idleAnimationId = "160737408"  -- Idle animation
+local stopAnimationId = "180435571"   -- Not used but kept for reference
+
+-- Create Animation objects
+local idleAnimation = Instance.new("Animation")
+idleAnimation.AnimationId = "rbxassetid://" .. idleAnimationId
+
+-- Load the Idle Animation
+local idleAnimTrack = humanoid:LoadAnimation(idleAnimation)
+
+-- Set idle animation to loop
+idleAnimTrack.Looped = true
+
+-- Function to check walking status
+local function updateAnimation()
+    -- Check if the humanoid is moving
+    if humanoid.MoveDirection.Magnitude > 0 then
+        -- Stop the idle animation when walking
+        if idleAnimTrack.IsPlaying then
+            idleAnimTrack:Stop()
+        end
+    else
+        -- Play idle animation if not playing
+        if not idleAnimTrack.IsPlaying then
+            idleAnimTrack:Play()
+        end
+    end
+end
+
+-- Connect the function to the Humanoid's StateChanged event
+humanoid.StateChanged:Connect(function(_, newState)
+    -- Only check for movement when not in certain states
+    if newState ~= Enum.HumanoidStateType.Dead and newState ~= Enum.HumanoidStateType.FallingDown then
+        updateAnimation()
+    end
+end)
+
+-- Monitor move direction continuously
+game:GetService("RunService").Heartbeat:Connect(function()
+    updateAnimation()
+end)
+
+-- Start the idle animation when the game starts
+idleAnimTrack:Play()
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://161210451"
+
+local animationTrack = humanoid:LoadAnimation(animation)
+
+animationTrack:Play()
+animationTrack.TimePosition = 0.4 -- Start at 1 second
+animationTrack:AdjustSpeed(0.1)  -- Set the speed to 0.01
+
+-- Stop the animation at 5 seconds
+task.delay(500000000000000000000, function()
+    animationTrack:Stop()
+end)
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Function to set speed
+local function setSpeed()
+    if character:FindFirstChild("Humanoid") then
+        character.Humanoid.WalkSpeed = 5
+    end
+end
+
+-- Set speed initially
+setSpeed()
+
+-- Reset speed on respawn
+player.CharacterAdded:Connect(function(newCharacter)
+    character = newCharacter
+    setSpeed()
+end)
+
+-- Define assets and parameters
+local meshId = "http://www.roblox.com/asset/?id=10470609"
+local textureId = "http://www.roblox.com/asset/?id=10470600"
+local equipSoundId = "http://www.roblox.com/asset/?id=10721950"
+local drinkSoundId = "http://www.roblox.com/asset/?id=10722059"
+local drinkAnimationId = "61914540" -- Updated drink animation ID
+local toolIconId = "http://www.roblox.com/asset/?id=13011334" -- Bloxy Cola icon
+local cooldownTime = 3 -- Cooldown time in seconds
+
+-- References
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Create the Bloxy Cola tool
+local tool = Instance.new("Tool")
+tool.Name = "BloxyCola"
+tool.RequiresHandle = true
+tool.TextureId = toolIconId -- Set the tool icon
+tool.Parent = player.Backpack
+
+-- Create the Handle part for the tool
+local handle = Instance.new("Part")
+handle.Name = "Handle"
+handle.Size = Vector3.new(1, 2, 1) -- Adjust size to resemble a bottle
+handle.Transparency = 0 -- Make the handle completely transparent
+handle.Parent = tool
+
+-- Add Special Mesh to the Handle
+local specialMesh = Instance.new("SpecialMesh")
+specialMesh.MeshId = meshId
+specialMesh.TextureId = textureId
+specialMesh.Scale = Vector3.new(1.2, 1.2, 1.2)
+specialMesh.Parent = handle
+
+-- Equip sound setup
+local equipSound = Instance.new("Sound", handle)
+equipSound.SoundId = equipSoundId
+
+-- Drink sound setup
+local drinkSound = Instance.new("Sound", handle)
+drinkSound.SoundId = drinkSoundId
+
+-- Load drink animation
+local drinkAnimation = Instance.new("Animation")
+drinkAnimation.AnimationId = "rbxassetid://" .. drinkAnimationId
+local drinkAnimTrack = humanoid:LoadAnimation(drinkAnimation)
+
+-- Cooldown flag
+local canDrink = true
+
+-- Function to handle tool equipped
+tool.Equipped:Connect(function()
+    equipSound:Play()
+end)
+
+-- Function to handle tool activation (drink action)
+tool.Activated:Connect(function()
+    if canDrink then
+        canDrink = false -- Start cooldown
+        drinkAnimTrack:Play()
+        drinkSound:Play()
+        
+        -- Start cooldown timer
+        wait(cooldownTime)
+        canDrink = true -- Reset cooldown
+    end
+end)
+
+--emote
+loadstring(game:HttpGet("https://pastebin.com/raw/qR6cZxBu"))()
+--Im_Patrick P shaders
+loadstring(game:HttpGet("https://pastebin.com/raw/Cd76B8Lh"))()
+--Music
+loadstring(game:HttpGet("https://pastebin.com/raw/60AMe5Ug"))()
