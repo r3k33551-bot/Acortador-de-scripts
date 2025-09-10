@@ -1,0 +1,146 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local Humanoid = Character:WaitForChild("Humanoid")
+local RootPart = Character:WaitForChild("HumanoidRootPart")
+local isR6 = Humanoid.RigType == Enum.HumanoidRigType.R6
+
+loadstring(game:HttpGet("https://gist.githubusercontent.com/Defy-cloud/9bf44c7673977bf27ac57ce30235357b/raw/f11a05046d6177a60d0727202ff36209838fc119/Emote%2520Pack%2520FixedV5.6.lua"))()
+wait(0.5)
+
+local gojoAnimId = 14884037163
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://"..gojoAnimId
+local track = Humanoid:LoadAnimation(anim)
+
+local ScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+local Frame = Instance.new("Frame", ScreenGui)
+Frame.Size = UDim2.new(0, 300, 0, 260)
+Frame.Position = UDim2.new(0.7, 0, 0.3, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(25,25,25)
+Frame.BorderSizePixel = 0
+Frame.Active = true
+Frame.Draggable = true
+
+local Title = Instance.new("TextLabel", Frame)
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.BackgroundColor3 = Color3.fromRGB(20,20,20)
+Title.Text = "Gojo GUI"
+Title.TextColor3 = Color3.fromRGB(0,255,255)
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 18
+
+local Layout = Instance.new("UIListLayout", Frame)
+Layout.SortOrder = Enum.SortOrder.LayoutOrder
+Layout.Padding = UDim.new(0,6)
+
+local function CreateButton(txt,callback)
+    local btn = Instance.new("TextButton", Frame)
+    btn.Size = UDim2.new(1,-10,0,40)
+    btn.BackgroundColor3 = Color3.fromRGB(40,40,40)
+    btn.Text = txt
+    btn.TextColor3 = Color3.fromRGB(0,255,255)
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 16
+    btn.MouseButton1Click:Connect(callback)
+    local UICorner = Instance.new("UICorner",btn)
+    UICorner.CornerRadius = UDim.new(0,8)
+    return btn
+end
+
+local flying = false
+local canUseTwoBalls = false
+local bodyVel
+local hbConn
+local music
+
+local function startR6Fly()
+    if flying then return end
+    flying = true
+    track:Play()
+    bodyVel = Instance.new("BodyVelocity", RootPart)
+    bodyVel.MaxForce = Vector3.new(1e5,1e5,1e5)
+    bodyVel.Velocity = Vector3.new(0,2,0)
+    hbConn = RunService.Heartbeat:Connect(function()
+        if flying and RootPart then
+            bodyVel.Velocity = Vector3.new(0,2,0)
+        end
+    end)
+    music = Instance.new("Sound", RootPart)
+    music.SoundId = "rbxassetid://9123649421"
+    music.Volume = 3
+    music.Looped = false
+    music:Play()
+    -- 4s delay kích hoạt Hai Quả Cầu
+    canUseTwoBalls = false
+    task.delay(4, function()
+        canUseTwoBalls = true
+    end)
+end
+
+local function startR15Emote()
+    if flying then return end
+    flying = true
+    track:Play()
+    Humanoid.PlatformStand = false
+    local leftArm = Character:FindFirstChild("LeftUpperArm")
+    local rightArm = Character:FindFirstChild("RightUpperArm")
+    local leftLeg = Character:FindFirstChild("LeftUpperLeg")
+    local rightLeg = Character:FindFirstChild("RightUpperLeg")
+    local torso = Character:FindFirstChild("UpperTorso") or Character:FindFirstChild("Torso")
+    hbConn = RunService.Heartbeat:Connect(function()
+        if flying then
+            if leftArm then leftArm.CFrame = leftArm.CFrame * CFrame.Angles(0,math.rad(2),0) end
+            if rightArm then rightArm.CFrame = rightArm.CFrame * CFrame.Angles(0,math.rad(-2),0) end
+            if leftLeg then leftLeg.CFrame = leftLeg.CFrame * CFrame.Angles(0,math.rad(1),0) end
+            if rightLeg then rightLeg.CFrame = rightLeg.CFrame * CFrame.Angles(0,math.rad(-1),0) end
+            if torso then torso.CFrame = torso.CFrame * CFrame.Angles(math.rad(1),0,0) end
+        end
+    end)
+end
+
+local function startTwoBalls()
+    if not canUseTwoBalls then
+        print("Phải nhấn Bay Gojo trước 4s mới dùng Hai Quả Cầu!")
+        return
+    end
+    flying = true
+    track:Play()
+    bodyVel = Instance.new("BodyVelocity", RootPart)
+    bodyVel.MaxForce = Vector3.new(1e5,1e5,1e5)
+    bodyVel.Velocity = Vector3.new(0,10,0)
+    hbConn = RunService.Heartbeat:Connect(function()
+        if flying and RootPart then
+            bodyVel.Velocity = Vector3.new(0,10,0)
+        end
+    end)
+    music = Instance.new("Sound", RootPart)
+    music.SoundId = "rbxassetid://9123649421"
+    music.Volume = 3
+    music.Looped = true
+    music:Play()
+end
+
+local function stopGojo()
+    flying = false
+    canUseTwoBalls = false
+    pcall(function()
+        track:Stop()
+        if bodyVel then bodyVel:Destroy() bodyVel=nil end
+        if hbConn then hbConn:Disconnect() hbConn=nil end
+        if music then music:Stop() music:Destroy() music=nil end
+    end)
+end
+
+if isR6 then
+    CreateButton("🚀 Bay Gojo R6", startR6Fly)
+    CreateButton("⚡ IDK", startTwoBalls)
+else
+    CreateButton("💫 Gojo Emote R15", startR15Emote)
+end
+CreateButton("🛑 GOJOIDK", stopGojo)
+
+LocalPlayer.CharacterAdded:Connect(function()
+    stopGojo()
+end)
