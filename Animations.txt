@@ -26,7 +26,7 @@ Frame.Draggable = true
 local Title = Instance.new("TextLabel", Frame)
 Title.Size = UDim2.new(1, 0, 0, 40)
 Title.BackgroundColor3 = Color3.fromRGB(20,20,20)
-Title.Text = "Emotes gui by 𝓜𝓘𝓨𝓚𝓞"
+Title.Text = "Emotes gui by MIYKO"
 Title.TextColor3 = Color3.fromRGB(0,255,255)
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 18
@@ -72,7 +72,7 @@ local function startR6Fly()
     music.Volume = 3
     music.Looped = false
     music:Play()
-    -- 4s delay kích hoạt Hai Quả Cầu
+
     canUseTwoBalls = false
     task.delay(4, function()
         canUseTwoBalls = true
