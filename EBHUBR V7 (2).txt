@@ -2,7 +2,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
    Name = "EBHUB",
-   Icon = 85846258826520, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   Icon = 120815996782931, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Cargando...",
    LoadingSubtitle = "by WUWU",
    ShowText = "EBHUB", -- for mobile users to unhide rayfield, change if you'd like
@@ -25,7 +25,7 @@ local Window = Rayfield:CreateWindow({
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
-   KeySystem = true, -- Set this to true to use our key system
+   KeySystem = false, -- Set this to true to use our key system
    KeySettings = {
       Title = "Insertar Key",
       Subtitle = "Key System",
@@ -484,9 +484,9 @@ local Button = Tab2:CreateButton({
 local Section = Tab3:CreateSection("TOOLS & MORE")
 
 local Button = Tab3:CreateButton({
-   Name = "FPS BOOST",
+   Name = "Low gfx",
    Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/MerebennieOfficial/ExoticJn/refs/heads/main/Fpsboosterv2"))()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Low-GFX-38613"))()
    -- The function that takes place when the button is pressed
    end,
 })
@@ -616,13 +616,46 @@ local Button = Tab3:CreateButton({
 })
 
 local Button = Tab3:CreateButton({
-   Name = "GOJO TOOLS IN THE V15 UPDATE",
+   Name = "GOJO intro",
    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Onihub-sigma/OniHub-Gojo-Public/refs/heads/main/Gojo%20Onihub%20Public.txt"))()
    -- The function that takes place when the button is pressed
    end,
 })
 
 local Section = Tab4:CreateSection("HUBS")
+
+local Button = Tab4:CreateButton({
+   Name = "key CRAZY BATTLEGROUND",
+   Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/The-Strongest-Battlegrounds-The-strongest-battleground-50830"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "tech hub",
+   Callback = function()
+   loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\75\105\101\116\98\97\47\75\105\101\116\98\97\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\77\121\37\50\48\103\117\105\37\50\48\105\110\116\114\111\34\41\41\40\41")()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "AUTOCOMBOS ui",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastefy.app/UY1oh6PG/raw"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Movesets ui",
+   Callback = function()
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/proscripter400/b24547203a4cc12bdcfe77fd13dd7580/raw/fb8048c0d5b59d626879b1a06cfedaae3e7ee205/charhub"))()
+      -- The function that takes place when the button is pressed
+   end,
+})
 
 local Button = Tab4:CreateButton({
    Name = "MEREBENNIE HUB",
