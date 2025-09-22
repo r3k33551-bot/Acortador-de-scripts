@@ -1005,8 +1005,6 @@ Anim:AdjustSpeed(0)
 Anim.TimePosition = startTime
 Anim:AdjustSpeed(1)
 
--- barra de ult
-
 local player = game.Players.LocalPlayer
 	local char = player.Character
 	local Humanoid = char.Humanoid
@@ -1112,8 +1110,6 @@ local player = game.Players.LocalPlayer
 			end
 		end
 	)
-
--- infinite effect
 
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -1334,8 +1330,6 @@ for i, v in workspace.Live:GetChildren() do
 	end
 end
 
---idk
-
 workspace.Live.ChildAdded:Connect(function(instance)
 	instance:WaitForChild("Humanoid")
 	onHealthChanged(instance, instance.Humanoid)
@@ -1419,8 +1413,6 @@ fine2.Parent = game.Workspace.Live["Weakest Dummy"]["Right Arm"]
             child:Emit(1) -- Emit 20 particles
         end
     end
-    
--- emotes
 
 local Players = cloneref(game:GetService('Players'))
 local lplr = Players.LocalPlayer
