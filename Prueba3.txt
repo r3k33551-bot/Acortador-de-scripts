@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Onihub-sigma/OniHub-Gojo-Public/refs/heads/main/Gojo%20Onihub%20Public.txt"))()
-
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local TweenService = game:GetService("TweenService")
@@ -1423,3 +1421,5 @@ local player = game.Players.LocalPlayer
 
 lplr:SetAttribute('ExtraSlots', true)
 lplr:SetAttribute('VIPServer', true)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Onihub-sigma/OniHub-Gojo-Public/refs/heads/main/Gojo%20Onihub%20Public.txt"))()
