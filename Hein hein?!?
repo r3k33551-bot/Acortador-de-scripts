@@ -1,0 +1,49 @@
+local toolName = "Hein Hitler"
+local animationId = "rbxassetid://192911538"
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function createTool()
+	local backpack = player:WaitForChild("Backpack")
+	if backpack:FindFirstChild(toolName) then return end
+
+	local tool = Instance.new("Tool")
+	tool.Name = toolName
+	tool.RequiresHandle = false
+	tool.CanBeDropped = false
+
+	local animation = Instance.new("Animation")
+	animation.AnimationId = animationId
+
+	local track = nil
+
+	tool.Equipped:Connect(function()
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoid = character:FindFirstChildOfClass("Humanoid")
+		if humanoid and humanoid.RigType == Enum.HumanoidRigType.R6 then
+			track = humanoid:LoadAnimation(animation)
+			track.Looped = true
+			track:Play()
+		end
+	end)
+
+	tool.Unequipped:Connect(function()
+		if track then
+			track:Stop()
+			track = nil
+		end
+	end)
+
+	tool.Parent = backpack
+end
+
+player.CharacterAdded:Connect(function(char)
+	task.wait(1)
+	createTool()
+end)
+
+if player.Character then
+	task.wait(1)
+	createTool()
+end
