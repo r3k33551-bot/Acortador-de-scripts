@@ -38,12 +38,12 @@ local Window = Rayfield:CreateWindow({
       Key = {"release"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
-local Tab1 = Window:CreateTab("|EMOTES / ANIMATIONS|", 4483362458) -- Title, Image
-local Tab2 = Window:CreateTab("|MOVESETS|", 4483362458) -- Title, Image
-local Tab3 = Window:CreateTab("|UTILITY|", 4483362458) -- Title, Image
-local Tab4 = Window:CreateTab("|STUFF|", 4483362458) -- Title, Image
-local Tab5 = Window:CreateTab("|HUBS|", 4483362458) -- Title, Image
-local Tab6 = Window:CreateTab("|AUTO STUFF|", 4483362458) -- Title, Image
+local Tab1 = Window:CreateTab("|EMOTES / ANIMATIONS|", 15143528348) -- Title, Image
+local Tab2 = Window:CreateTab("|MOVESETS|", 17140853847) -- Title, Image
+local Tab3 = Window:CreateTab("|UTILITY|", 12285568530) -- Title, Image
+local Tab4 = Window:CreateTab("|STUFF|", 12285568530) -- Title, Image
+local Tab5 = Window:CreateTab("|HUBS|", 120815996782931) -- Title, Image
+local Tab6 = Window:CreateTab("|AUTO STUFF|", 12285568530) -- Title, Image
 local Tab7 = Window:CreateTab("|UNDERTALE MUSIC?!?!?!|", 4483362458) -- Title, Image
 
 local Button = Tab1:CreateButton({
