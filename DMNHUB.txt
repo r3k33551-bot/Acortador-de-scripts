@@ -676,8 +676,16 @@ local Button = Tab3:CreateButton({
    end,
 })
 
+local Button = Tab4:CreateButton({
+   Name = "HEIN HEIN",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/Hein%20hein%3F!%3F"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
 local Button = Tab3:CreateButton({
-   Name = "GOD MODE?",
+   Name = "KILLS FARM",
    Callback = function()
        loadstring(game:HttpGet("https://pastebin.com/raw/e20Pri4d"))()
    -- The function that takes place when the button is pressed
@@ -713,6 +721,95 @@ local Button = Tab3:CreateButton({
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/ArchIsDead/Arch-Vault/refs/heads/main/buy-unreleased-emote.lua"))()
       -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "anti dead counter",
+   Callback = function()
+       local teleportPosition = Vector3.new(240.31468200683594, -491.9150390625, -183.96755981445312)
+local platformSize = Vector3.new(10, 1, 10)
+local loopDuration = 5 -- Seconds to loop teleport
+local teleportInterval = 0.05 -- Time between teleports (faster than 0.1 seconds)
+ 
+-- Variables
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local camera = workspace.CurrentCamera
+local savedPosition = nil
+local looping = false
+ 
+-- Function to create a platform
+local function createPlatform(position)
+    local platform = Instance.new("Part")
+    platform.Name = "TemporaryPlatform"
+    platform.Size = platformSize
+    platform.Position = position
+    platform.Anchored = true
+    platform.Color = Color3.new(1, 0, 0) -- Red platform
+    platform.Parent = workspace
+    return platform
+end
+ 
+-- Function to reset the camera
+local function resetCamera()
+    camera.CameraSubject = player.Character:WaitForChild("Humanoid")
+    camera.CameraType = Enum.CameraType.Custom
+end
+ 
+-- Function to loop teleport
+local function loopTeleport()
+    if not character:FindFirstChild("HumanoidRootPart") then return end
+    local rootPart = character.HumanoidRootPart
+    looping = true
+    local platform = createPlatform(teleportPosition + Vector3.new(0, -3, 0)) -- Slightly below the player
+ 
+    local startTime = tick()
+    while tick() - startTime < loopDuration and looping do
+        rootPart.CFrame = CFrame.new(teleportPosition)
+        wait(teleportInterval)
+    end
+ 
+    -- Stop looping and return to saved position
+    platform:Destroy()
+    if savedPosition then
+        rootPart.CFrame = savedPosition
+    end
+    looping = false
+ 
+    -- Reset the camera after teleportation
+    resetCamera()
+end
+ 
+-- Create GUI Button
+local screenGui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+local button = Instance.new("TextButton", screenGui)
+button.Size = UDim2.new(0, 200, 0, 50)
+button.Position = UDim2.new(0.5, -100, 0) -- Top center of the mobile screen
+button.BackgroundColor3 = Color3.new(0, 0, 0) -- Black background
+button.TextColor3 = Color3.new(0, 1, 0) -- Green text
+button.Font = Enum.Font.SourceSansBold
+button.TextSize = 20
+button.Text = "ANTI COUNTER"
+button.AutoButtonColor = false
+button.BorderSizePixel = 2
+ 
+-- Notification
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Script Loaded";
+    Text = "Made by REDSOUL";
+    Duration = 5; -- Duration in seconds
+})
+ 
+-- Button Click Event
+button.MouseButton1Click:Connect(function()
+    if looping then return end -- Prevent re-triggering
+    if character:FindFirstChild("HumanoidRootPart") then
+        savedPosition = character.HumanoidRootPart.CFrame -- Save position
+        loopTeleport()
+    end
+end)
+   -- The function that takes place when the button is pressed
    end,
 })
 
