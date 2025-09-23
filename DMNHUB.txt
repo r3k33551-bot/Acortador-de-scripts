@@ -40,10 +40,11 @@ local Window = Rayfield:CreateWindow({
 })
 local Tab1 = Window:CreateTab("|EMOTES / ANIMATIONS|", 4483362458) -- Title, Image
 local Tab2 = Window:CreateTab("|MOVESETS|", 4483362458) -- Title, Image
-local Tab3 = Window:CreateTab("|TOOLS & MORE|", 4483362458) -- Title, Image
-local Tab4 = Window:CreateTab("|HUBS|", 4483362458) -- Title, Image
-local Tab5 = Window:CreateTab("|AUTO STUFF|", 4483362458) -- Title, Image
-local Tab6 = Window:CreateTab("|UNDERTALE MUSIC?!?!?!|", 4483362458) -- Title, Image
+local Tab3 = Window:CreateTab("|UTILITY|", 4483362458) -- Title, Image
+local Tab4 = Window:CreateTab("|STUFF|", 4483362458) -- Title, Image
+local Tab5 = Window:CreateTab("|HUBS|", 4483362458) -- Title, Image
+local Tab6 = Window:CreateTab("|AUTO STUFF|", 4483362458) -- Title, Image
+local Tab7 = Window:CreateTab("|UNDERTALE MUSIC?!?!?!|", 4483362458) -- Title, Image
 
 local Button = Tab1:CreateButton({
    Name = "DIVINE FORM",
@@ -521,9 +522,9 @@ local Button = Tab2:CreateButton({
    end,
 })
 
-local Section = Tab3:CreateSection("TOOLS & MORE")
+local Section = Tab3:CreateSection("UTILITY")
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "AUTO SIMON SAYS COUNTER",
    Callback = function()
        local Players = game:GetService("Players")
@@ -575,7 +576,7 @@ end)
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "WHITE BEARD effects",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Tariviste/Scripts/refs/heads/main/Whitebeard%20Script%20TSB"))()
@@ -599,7 +600,7 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "SHADERS",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/high-shaders.txt"))()
@@ -638,15 +639,7 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Button = Tab3:CreateButton({
-   Name = "SIDE DASH FROM TIKTOK",
-   Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/FakeDash/refs/heads/main/Protected_5833389828844912.lua"))()
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "DICK?!!??!",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/Avtor1zaTion/NO-FE-SNAKE/refs/heads/main/NO-FE-Snake.txt'))()
@@ -678,7 +671,7 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "GOJO EFFECTS",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/gojos%20infinity.txt"))()
@@ -686,7 +679,7 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "Toji morph",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Gojohin/TojiShibuya/refs/heads/main/TojiShibuya"))()
@@ -694,7 +687,7 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "crab boss",
    Callback = function()
        game:GetService("Players").LocalPlayer.Character.Communicate:FireServer({Goal = 'Change Character',Character = 'Crab Boss'})
@@ -715,7 +708,7 @@ lplr:SetAttribute('VIPServer', true)
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "kj ult",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Ahma174/Tsb-Scripts/refs/heads/main/KJ%20Ultimate.lua"))()
@@ -749,7 +742,7 @@ workspace:SetAttribute("NoDashCooldown", true)
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "EPIC HORNS",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/ArchIsDead/Arch-Vault/refs/heads/main/free-limited-visual.lua"))()
@@ -801,7 +794,7 @@ end
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "ARCH-VAULT SHADERS",
    Callback = function()
        local Lighting = game:GetService("Lighting")
@@ -838,7 +831,7 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "JERK OFF",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/JERK%20OFF"))()
@@ -846,7 +839,7 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "FAKE ULT",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/Fake%20omni"))()
@@ -862,7 +855,7 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "GOJO intro",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Onihub-sigma/OniHub-Gojo-Public/refs/heads/main/Gojo%20Onihub%20Public.txt"))()
@@ -870,9 +863,9 @@ local Button = Tab3:CreateButton({
    end,
 })
 
-local Section = Tab4:CreateSection("HUBS")
+local Section = Tab5:CreateSection("HUBS")
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "key CRAZY BATTLEGROUND",
    Callback = function()
    loadstring(game:HttpGet("https://rawscripts.net/raw/The-Strongest-Battlegrounds-The-strongest-battleground-50830"))()
@@ -880,7 +873,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "tech hub",
    Callback = function()
    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\75\105\101\116\98\97\47\75\105\101\116\98\97\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\77\121\37\50\48\103\117\105\37\50\48\105\110\116\114\111\34\41\41\40\41")()
@@ -888,7 +881,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "AUTOCOMBOS ui",
    Callback = function()
    loadstring(game:HttpGet("https://pastefy.app/UY1oh6PG/raw"))()
@@ -896,7 +889,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "Movesets ui",
    Callback = function()
    loadstring(game:HttpGet("https://gist.githubusercontent.com/proscripter400/b24547203a4cc12bdcfe77fd13dd7580/raw/fb8048c0d5b59d626879b1a06cfedaae3e7ee205/charhub"))()
@@ -904,7 +897,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "MOVESETS UI (2)",
    Callback = function()
        loadstring(game:HttpGet("https://gist.githubusercontent.com/proscripter400/b24547203a4cc12bdcfe77fd13dd7580/raw/fb8048c0d5b59d626879b1a06cfedaae3e7ee205/charhub"))()
@@ -912,7 +905,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "MEREBENNIE HUB",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/MerebennieOfficial/ExoticJn/refs/heads/main/Merebennie%20Hub%20V2"))()
@@ -920,7 +913,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "BLOX TRAP",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/qwertyui-is-back/Bloxstrap/main/Initiate.lua'), 'lol')()
@@ -928,7 +921,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "GHOST HUB",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
@@ -936,7 +929,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "Vexon hub",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/DiosDi/VexonHub/refs/heads/main/VexonHub"))()
@@ -944,7 +937,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "phantasm hub",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Games/TSB.lua"))()
@@ -952,7 +945,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "ARCH VAULT",
    Callback = function()
        loadstring(game:HttpGet("https://arch-vaults.vercel.app"))()
@@ -960,9 +953,9 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Section = Tab4:CreateSection("INFINITE STUDIOS")
+local Section = Tab5:CreateSection("INFINITE STUDIOS")
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "LIMITED EMOTES HUB",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/NetlessScripter/GOKU/refs/heads/main/FREE%20EMOTES%20GUI"))()
@@ -970,7 +963,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Button = Tab4:CreateButton({
+local Button = Tab5:CreateButton({
    Name = "KEY LIMITED EMOTES",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/NetlessScripter/Vegeta/refs/heads/main/KTG"))()
@@ -978,9 +971,9 @@ local Button = Tab4:CreateButton({
    end,
 })
 
-local Section = Tab5:CreateSection("AUTOSTUFF")
+local Section = Tab6:CreateSection("AUTOSTUFF")
 
-local Button = Tab5:CreateButton({
+local Button = Tab6:CreateButton({
    Name = "AUTO UPPERCUT",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/gamerscripter90/Jisj/main/autouppercutallcharacter.lua.txt"))()
@@ -988,7 +981,7 @@ local Button = Tab5:CreateButton({
    end,
 })
 
-local Button = Tab5:CreateButton({
+local Button = Tab6:CreateButton({
    Name = "SLIDE DASH MEREBENNIE",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/MerebennieOfficial/ExoticJn/main/SidedashAssist"))()
@@ -996,7 +989,15 @@ local Button = Tab5:CreateButton({
    end,
 })
 
-local Button = Tab5:CreateButton({
+local Button = Tab6:CreateButton({
+   Name = "SIDE DASH FROM TIKTOK",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/FakeDash/refs/heads/main/Protected_5833389828844912.lua"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab6:CreateButton({
    Name = "Kiba v4",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/MerebennieOfficial/ExoticJn/refs/heads/main/Kibav4"))()
@@ -1004,7 +1005,7 @@ local Button = Tab5:CreateButton({
    end,
 })
 
-local Button = Tab5:CreateButton({
+local Button = Tab6:CreateButton({
    Name = "lethal dash",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantLethal/refs/heads/main/Protected_5983112998592296.lua"))()
@@ -1012,7 +1013,7 @@ local Button = Tab5:CreateButton({
    end,
 })
 
-local Button = Tab5:CreateButton({
+local Button = Tab6:CreateButton({
    Name = "kyoto lord heaven",
    Callback = function()
        getgenv().Requires4M1 = false -- Set this to true if you want to do side dash before Flowing Water
@@ -1023,7 +1024,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/Combos/refs
    end,
 })
 
-local Button = Tab5:CreateButton({
+local Button = Tab6:CreateButton({
    Name = "Instant twisted",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantTwistedRevamp/refs/heads/main/Protected_7455521176683315.lua"))()
@@ -1031,9 +1032,9 @@ local Button = Tab5:CreateButton({
    end,
 })
 
-local Section = Tab6:CreateSection("UNDERTALE UWU")
+local Section = Tab7:CreateSection("UNDERTALE UWU")
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "TIME PARADOX",
    Callback = function()
    local HttpService = game:GetService("HttpService")
@@ -1054,7 +1055,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "Spider dance",
    Callback = function()
        local HttpService = game:GetService("HttpService")
@@ -1074,7 +1075,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "NGAHHH!!",
    Callback = function()
        local HttpService = game:GetService("HttpService")
@@ -1094,7 +1095,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "Spear of justice",
    Callback = function()
        local HttpService = game:GetService("HttpService")
@@ -1114,7 +1115,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "Megalovania",
    Callback = function()
        local HttpService = game:GetService("HttpService")
@@ -1134,7 +1135,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "Last goodbay",
    Callback = function()
 local HttpService = game:GetService("HttpService")
@@ -1154,7 +1155,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "Heartache",
    Callback = function()
        local HttpService = game:GetService("HttpService")
@@ -1174,7 +1175,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "Dating start!",
    Callback = function()
        local HttpService = game:GetService("HttpService")
@@ -1194,7 +1195,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "Dating fight!",
    Callback = function()
        local HttpService = game:GetService("HttpService")
@@ -1214,7 +1215,7 @@ sound:Play()
    end,
 })
 
-local Button = Tab6:CreateButton({
+local Button = Tab7:CreateButton({
    Name = "Asgore",
    Callback = function()
        local HttpService = game:GetService("HttpService")
@@ -1235,8 +1236,8 @@ sound:Play()
 })
 
 Rayfield:Notify({
-   Title = "EBHUBR V14",
-   Content = "STUFF ADDED",
+   Title = "DOMAINHUB",
+   Content = "lol",
    Duration = 6.5,
    Image = 134256414823554,
 })
