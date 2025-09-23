@@ -107,6 +107,16 @@ local Button = Tab2:CreateButton({
 })
 
 local Button = Tab2:CreateButton({
+   Name = "GOJO V2 (NO MORPH)",
+   Icon = 15143528348,
+   Callback = function()
+   getgenv().morph = false 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToSorcerer/refs/heads/main/LatestV2.lua"))()
+   end
+})
+
+
+local Button = Tab2:CreateButton({
    Name = "SUKUNA",
    Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/damir512/whendoesbrickdie/main/tspno.txt",true))()
@@ -377,6 +387,13 @@ local Button = Tab2:CreateButton({
 })
 
 local Button = Tab2:CreateButton({
+   Name = "NARUTO",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/NarutoBeatUpSasukeAss/refs/heads/main/NarutoCums"))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
    Name = "HELLISH MOVESET",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/HellishAgem/HellishMovesetCutscene/refs/heads/main/Protected_6748082827088148.txt"))()
@@ -401,6 +418,20 @@ local Button = Tab2:CreateButton({
 })
 
 local Section = Tab2:CreateSection("GAROU MOVESETS")
+
+local Button = Tab2:CreateButton({
+   Name = "Garou Rework",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/kuXQ6Pdm"))();
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Sonic.exe",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastefy.app/yzjyz9bZ/raw"))()
+   end,
+})
 
 local Button = Tab2:CreateButton({
    Name = "AKAZA",
@@ -439,6 +470,13 @@ local Button = Tab2:CreateButton({
    Callback = function()
        loadstring(game:HttpGet("https://paste.ee/r/NPnfk"))()
    -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Void garou",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/yes1nt/yes/refs/heads/main/Void%20Reaper%20Obfuscated.txt"))()
    end,
 })
 
@@ -497,6 +535,21 @@ local Button = Tab2:CreateButton({
 })
 
 local Section = Tab2:CreateSection("SUIRYU MOVESETS")
+
+local Button = Tab2:CreateButton({
+   Name = "Guest 666",
+   Callback = function()
+   local Keybind = "E" -- shortcut to activate variant(only work on device that uses keyboard to play)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/memeenjoyer43/tsbg/refs/heads/main/Guest%20666"))()(Keybind)
+--SHINJI
+getgenv().speedtools = true --- set true if you want use this tool if you want to run
+getgenv().speedpunch= false --- tp and normal Punch
+getgenv().dance= false --- set true if you want to this dance song made by rebzyyx all I want is you 
+getgenv().night= false -- set true if you want to day to night 
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Shinji%20tp%20exploit'))()
+   end,
+})
 
 local Button = Tab2:CreateButton({
    Name = "KJ",
@@ -716,6 +769,13 @@ local Button = Tab4:CreateButton({
    end,
 })
 
+local Button = Tab4:CreateButton({
+   Name = "SUBSPACE",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/DC6q7z55"))()
+   end,
+})
+
 local Button = Tab3:CreateButton({
    Name = "HEALT ESP",
    Callback = function()
@@ -902,6 +962,20 @@ local Button = Tab5:CreateButton({
    Callback = function()
        loadstring(game:HttpGet("https://gist.githubusercontent.com/proscripter400/b24547203a4cc12bdcfe77fd13dd7580/raw/fb8048c0d5b59d626879b1a06cfedaae3e7ee205/charhub"))()
    -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "MOVESET UI (3)",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/JakeScripterz/Arsenic/refs/heads/main/Arsenic-Reborn"))()
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "COREX HUB V4",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/gamerscripter90/Corexhubv4/main/Main.txt"))()
    end,
 })
 
