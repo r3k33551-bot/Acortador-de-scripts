@@ -1109,7 +1109,7 @@ local replacementAnimations = {
  
     ["16737255386"] = "rbxassetid://13071982935", --punch3
  
-    ["10469643643"] = "rbxassetid://14374357351", --punch4
+    ["10469643643"] = "rbxassetid://128022763591042", --punch4
  
     ["17859015788"] = "rbxassetid://12684185971", --downslam finisher
 
