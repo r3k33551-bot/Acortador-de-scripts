@@ -402,6 +402,43 @@ local Button = Tab2:CreateButton({
 })
 
 local Button = Tab2:CreateButton({
+   Name = "KKJ",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/4ntrax7w7v9/4ntrax-Scripts/refs/heads/main/KKJ-Moveset"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "JUN",
+   Callback = function()
+       loadstring(game:HttpGet("https://gist.githubusercontent.com/GoldenHeads2/f66279000c58a020e894a6db44914838/raw/62e53e1acacec0b38b43cd0f594292c32e09c39b/gistfile1.txt"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Shinji",
+   Callback = function()
+       getgenv().speedtools = true --- set true if you want use this tool if you want to run
+getgenv().speedpunch= false --- tp and normal Punch
+getgenv().dance= false --- set true if you want to this dance song made by rebzyyx all I want is you 
+getgenv().night= false -- set true if you want to day to night 
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Shinji%20tp%20exploit'))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "gunner",
+   Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/XiBREwwK"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab2:CreateButton({
    Name = "invencible",
    Callback = function()
        loadstring(game:HttpGet("https://pastefy.app/BtDQqi2c/raw"))()
@@ -525,6 +562,14 @@ local Button = Tab2:CreateButton({
 })
 
 local Section = Tab2:CreateSection("SONIC MOVESETS")
+
+local Button = Tab2:CreateButton({
+   Name = "True sonic",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/AeryAlex/Scripts/refs/heads/main/True-Sonic%20(OBSFUCTED).lua"))();
+   -- The function that takes place when the button is pressed
+   end,
+})
 
 local Button = Tab2:CreateButton({
    Name = "1X1X1X1",
@@ -1408,7 +1453,7 @@ sound:Play()
 
 Rayfield:Notify({
    Title = "DOMAINHUB",
-   Content = "lol",
+   Content = "mas movesets xd 24/09/25 8:41 hora U.S.A",
    Duration = 6.5,
    Image = 134256414823554,
 })
