@@ -55,6 +55,14 @@ local Button = Tab1:CreateButton({
 })
 
 local Button = Tab1:CreateButton({
+   Name = "Final spark by miyko",
+   Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/obf_135fT3c6G0da4X9yckPtKnzWk71fN10B6Z7LQ05T1jdGpaYKNVHxSZHX6caWltcj.lua.txt'),true))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab1:CreateButton({
    Name = "EMERGE(LOW)",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Yourfavoriteguy/HAHAHHA/refs/heads/main/EmergeButLow",true))()
