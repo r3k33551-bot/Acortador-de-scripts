@@ -1,0 +1,216 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Remove any existing custom GUI
+local existingGui = player:FindFirstChild("PlayerGui"):FindFirstChild("AnimationLoggerGui")
+if existingGui then
+    existingGui:Destroy()
+end
+
+-- Create a new ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "AnimationLoggerGui"
+screenGui.Parent = player:WaitForChild("PlayerGui")
+
+-- Create a table to keep track of logged animation IDs
+local loggedAnimations = {}
+
+local animationMap = {
+    [10469493270] = "Saitama M1 (1)",
+    [10469630950] = "Saitama M1 (2)",
+    [10469639222] = "Saitama M1 (3)",
+    [10469643643] = "Saitama M1 (4)",
+    [7807831448] = "Walking",
+    [7815618175] = "Running",
+    [14516273501] = "Standing",
+    [180436334] = "Climbing",
+    [125750702] = "Falling (Start)",
+    [180436148] = "Falling (Middle)",
+    -- [14516273501] duplicado removido
+    [10480796021] = "Side Dash (Left)",
+    [10480793962] = "Side Dash (Right)"
+    -- … tu tabla sigue igual …
+}
+
+-- Create the main GUI frame
+local frame = Instance.new("Frame", screenGui)
+frame.Size = UDim2.new(0, 300, 0, 450)
+frame.Position = UDim2.new(0.5, -150, 0.5, -200)
+frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+frame.BorderSizePixel = 2
+
+local titleLabel = Instance.new("TextLabel", frame)
+titleLabel.Size = UDim2.new(1, 0, 0, 40)
+titleLabel.Text = "Logged Animations"
+titleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+titleLabel.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+
+local textBox = Instance.new("TextBox", frame)
+textBox.Size = UDim2.new(1, 0, 0, 380)
+textBox.Position = UDim2.new(0, 0, 0, 40)
+textBox.Text = ""
+textBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+textBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+textBox.ClearTextOnFocus = false
+textBox.MultiLine = true
+textBox.TextEditable = false
+textBox.TextWrapped = true
+
+-- Function to adjust text box size
+local function adjustTextBoxSize()
+    local textSize = textBox.TextBounds
+    textBox.Size = UDim2.new(1, 0, 0, math.max(380, textSize.Y + 20))
+end
+
+-- Create Reset List Button
+local resetButton = Instance.new("TextButton", frame)
+resetButton.Size = UDim2.new(1, 0, 0, 40)
+resetButton.Position = UDim2.new(0, 0, 1, 0)
+resetButton.Text = "Reset List"
+resetButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+resetButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+
+resetButton.MouseButton1Click:Connect(function()
+    loggedAnimations = {}
+    textBox.Text = ""
+    adjustTextBoxSize()
+end)
+
+-- Create smaller menu for animation input
+local inputFrame = Instance.new("Frame", screenGui)
+inputFrame.Size = UDim2.new(0, 150, 0, 150)
+inputFrame.Position = UDim2.new(0.5, 10, 0.5, -75)
+inputFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+inputFrame.BorderSizePixel = 2
+
+local inputTitleLabel = Instance.new("TextLabel", inputFrame)
+inputTitleLabel.Size = UDim2.new(1, 0, 0, 30)
+inputTitleLabel.Text = "Play Animation"
+inputTitleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+inputTitleLabel.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+
+local inputTextBox = Instance.new("TextBox", inputFrame)
+inputTextBox.Size = UDim2.new(1, 0, 0, 80)
+inputTextBox.Position = UDim2.new(0, 0, 0, 30)
+inputTextBox.PlaceholderText = "Enter animation ID..."
+inputTextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+inputTextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+inputTextBox.ClearTextOnFocus = false
+
+-- Play Button
+local playButton = Instance.new("TextButton", inputFrame)
+playButton.Size = UDim2.new(1, 0, 0, 40)
+playButton.Position = UDim2.new(0, 0, 1, 0)
+playButton.Text = "Play Animation"
+playButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+playButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+
+-- Stop Button
+local stopButton = Instance.new("TextButton", inputFrame)
+stopButton.Size = UDim2.new(1, 0, 0, 40)
+stopButton.Position = UDim2.new(0, 0, 1, 40)
+stopButton.Text = "Stop Animations"
+stopButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+stopButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+
+stopButton.MouseButton1Click:Connect(function()
+    local animator = humanoid:FindFirstChild("Animator")
+    if animator then
+        for _, track in ipairs(animator:GetPlayingAnimationTracks()) do
+            track:Stop()
+        end
+    end
+end)
+
+-- Delete Menu Button
+local deleteMenuButton = Instance.new("TextButton", frame)
+deleteMenuButton.Size = UDim2.new(1, 0, 0, 40)
+deleteMenuButton.Position = UDim2.new(0, 0, 1, 40)
+deleteMenuButton.Text = "Delete Menu"
+deleteMenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+deleteMenuButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+
+deleteMenuButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
+
+-- Toggle visibility with period key
+local isVisible = true
+local userInputService = game:GetService("UserInputService")
+userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+    if not gameProcessedEvent and input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.Period then
+        isVisible = not isVisible
+        frame.Visible = isVisible
+        inputFrame.Visible = isVisible
+    end
+end)
+
+-- ✅ Nueva función draggable (PC y móvil)
+local function makeDraggable(frame)
+    local dragging, dragInput, dragStart, startPos
+
+    local function update(input)
+        local delta = input.Position - dragStart
+        frame.Position = UDim2.new(
+            startPos.X.Scale,
+            startPos.X.Offset + delta.X,
+            startPos.Y.Scale,
+            startPos.Y.Offset + delta.Y
+        )
+    end
+
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = frame.Position
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    frame.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+
+    game:GetService("UserInputService").InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            update(input)
+        end
+    end)
+end
+
+-- ✅ Hacemos que ambas ventanas se puedan mover
+makeDraggable(frame)
+makeDraggable(inputFrame)
+
+-- Function to log animations
+local function logAnimation(animationId)
+    if not loggedAnimations[animationId] then
+        loggedAnimations[animationId] = true
+        local animationName = animationMap[tonumber(animationId)] or "Unknown Animation"
+        textBox.Text = textBox.Text .. "rbxassetid://" .. animationId .. " - " .. animationName .. "\n"
+        adjustTextBoxSize()
+    end
+end
+
+-- Detect when animations are played
+humanoid.AnimationPlayed:Connect(function(animationTrack)
+    local animationId = animationTrack.Animation.AnimationId:match("%d+")
+    logAnimation(animationId)
+
+    if animationId == "17292505729" then
+        local sound = Instance.new("Sound", character)
+        sound.SoundId = "rbxassetid://17292499081"
+        sound:Play()
+    end
+end)
+
+print("✅ Animation logger con ventanas movibles cargado.")
