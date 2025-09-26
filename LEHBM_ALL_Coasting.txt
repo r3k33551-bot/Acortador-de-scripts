@@ -1,0 +1,1547 @@
+-- ventana
+
+local Coasting = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Coasting:CreateWindow({
+   Name = "EMOTEHUB",
+   Icon = 120815996782931, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Cargando...",
+   LoadingSubtitle = "by MIYKO",
+   ShowText = "EMOTE", -- for mobile users to unhide rayfield, change if you'd like
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   Keybind = "P", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableCoastingPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Coasting from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Key in discord",
+      Subtitle = "sistema de key",
+      Note = "UWU", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Coasting may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Coasting to get the key from
+      Key = {"release"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+local Tab1 = Window:CreateTab("|Limited emotes|", 15143528348) -- Title, Image
+
+-- Secciones principales adaptadas a Coasting
+local Section1 = Tab1:CreateSection("Limited emotes")
+local Section2 = Tab2:CreateSection("Free emotes")
+local Section3 = Tab3:CreateSection("Character Animations")
+
+local Tab2 = Window:CreateTab("|Free emotes|", 17140853847) -- Title, Image
+
+Coasting:Notify({
+   Title = "IDK",
+   Content = "teto my love",
+   Duration = 6.5,
+   Image = 134256414823554,
+})
+
+local Section = Tab1:CreateSection("Limited emotes")
+
+local Button = Section1:CreateButton("Boundles Rage", function()
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local humanoid = char:WaitForChild("Humanoid")
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://107649573628906"
+humanoid:LoadAnimation(anim):Play()
+local e = Instance.new("Accessory")
+e.Name = "#EmoteHolder_"..math.random(1e5)
+e.Parent = char
+e:SetAttribute("EmoteProperty", true)
+require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
+Character = char,
+vfxName = "Boundles Rage",
+SpecificModule = game.ReplicatedStorage.Emotes.VFX,
+AnimSent = 114451374603244,
+RealBind = e
+}
+-- The function that takes place when the button is pressed
+end)
+
+
+local Button = Section1:CreateButton("Final Spark", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/obf_135fT3c6G0da4X9yckPtKnzWk71fN10B6Z7LQ05T1jdGpaYKNVHxSZHX6caWltcj.lua.txt'),true))()
+-- The function that takes place when the button is pressed
+end)
+
+
+local Button = Section1:CreateButton("Last Will", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/obfuscated_script-1758818186602.lua.txt"))()
+-- The function that takes place when the button is pressed
+end)
+
+
+local Button = Section1:CreateButton("Final Stand", function()
+local p = game.Players.LocalPlayer
+-- Cuando tu personaje cargue o reaparezca
+p.CharacterAdded:Connect(function(c)
+c:WaitForChild("Humanoid")
+local h = c:FindFirstChildOfClass("Humanoid")
+if not h then return end
+-- Animación nueva
+local a = Instance.new("Animation")
+a.AnimationId = "rbxassetid://129361308786827"
+local track = h:LoadAnimation(a)
+track:Play()
+-- Accesorio dummy
+local e = Instance.new("Accessory")
+e.Name = "#EmoteHolder_"..math.random(1e5)
+e.Parent = c
+e:SetAttribute("EmoteProperty", true)
+-- VFX "Final Stand"
+require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
+Character = c,
+vfxName = "Final Stand",
+SpecificModule = game.ReplicatedStorage.Emotes.VFX,
+AnimSent = 129361308786827,
+RealBind = e
+}
+end)
+-- The function that takes place when the button is pressed
+end)
+
+
+local Button = Section1:CreateButton("Shadow Eruption", function()
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local humanoid = char:WaitForChild("Humanoid")
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://121032789756540"
+humanoid:LoadAnimation(anim):Play()
+local e = Instance.new("Accessory")
+e.Name = "#EmoteHolder_"..math.random(1e5)
+e.Parent = char
+e:SetAttribute("EmoteProperty", true)
+require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
+Character = char,
+vfxName = "Shadow Eruption",
+SpecificModule = game.ReplicatedStorage.Emotes.VFX,
+AnimSent = 121032789756540,
+RealBind = e
+}
+-- The function that takes place when the button is pressed
+end)
+
+
+local Button = Section1:CreateButton("Eternal Seal", function()
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local humanoid = char:WaitForChild("Humanoid")
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://100255267749203"
+humanoid:LoadAnimation(anim):Play()
+local e = Instance.new("Accessory")
+e.Name = "#EmoteHolder_"..math.random(1e5)
+e.Parent = char
+e:SetAttribute("EmoteProperty", true)
+require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
+Character = char,
+vfxName = "Eternal Seal",
+SpecificModule = game.ReplicatedStorage.Emotes.VFX,
+AnimSent = 100255267749203,
+RealBind = e
+}
+-- The function that takes place when the button is pressed
+end)
+
+
+local Section = Tab2:CreateSection("Free emotes")
+
+local Button = Section2:CreateButton("Time shift", function()
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local humanoid = char:WaitForChild("Humanoid")
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://114451374603244"
+humanoid:LoadAnimation(anim):Play()
+local e = Instance.new("Accessory")
+e.Name = "#EmoteHolder_"..math.random(1e5)
+e.Parent = char
+e:SetAttribute("EmoteProperty", true)
+require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
+Character = char,
+vfxName = "Time Shift",
+SpecificModule = game.ReplicatedStorage.Emotes.VFX,
+AnimSent = 114451374603244,
+RealBind = e
+}
+-- The function that takes place when the button is pressed
+end)
+
+
+local emotesPart1 = {
+    {Name="Let's Go", ID="18450770138"},
+    {Name="Silly Dance", ID="18450448457"},
+    {Name="Start Throne", ID="18450698238"},
+    {Name="Idle Throne", ID="18450697195"},
+    {Name="WHAT", ID="18450685221"},
+    {Name=":D", ID="18450597765"},
+    {Name="Free Flow", ID="18450531343"},
+    {Name="Jiggy", ID="18450480375"},
+    {Name="All Yours", ID="18450406917"},
+    {Name="I Love TSB", ID="18450373829"},
+    {Name="Guided", ID="18459646696"},
+    {Name="Stroll", ID="18459518606"},
+    {Name="Jello", ID="18459402335"},
+    {Name="Weaking", ID="18459317750"},
+    {Name="Tornado", ID="18459285150"},
+    {Name="Kitchen", ID="18459220516"},
+    {Name="Start Void", ID="18459178353"},
+    {Name="Idle Void", ID="18459183268"},
+    {Name="Drum Major", ID="18418313278"},
+    {Name="Owl", ID="17292549897"},
+    {Name="Take an L", ID="18614546390"},
+    {Name="RK Coin Trick", ID="18715907469"},
+    {Name="CarRide", ID="18717109979"},
+    {Name="CarRide Victim", ID="18717114746"},
+    {Name="Sturdy", ID="18717119948"},
+    {Name="Boppin", ID="18717124767"},
+    {Name="Chrono", ID="18717128518"},
+    {Name="Moves", ID="18717137258"},
+    {Name="Chill", ID="18717170076"},
+    {Name="Backwards", ID="17863082627"},
+    {Name="Poke Dance", ID="17861884104"},
+    {Name="8Bit Celebration", ID="17863041811"},
+    {Name="Ohio Dance", ID="17861841334"},
+    {Name="Kaz Kick", ID="17861870996"},
+    {Name="Stepping Shuffle", ID="17861898789"},
+    {Name="Speedy Legs", ID="17863047324"},
+    {Name="Excited Shuffle", ID="17863091228"},
+    {Name="Arm Sway", ID="17861898147"},
+    {Name="Odyssey Dance", ID="17861881962"},
+    {Name="AKUMA", ID="17861844708"},
+    {Name="Sacred Summoning", ID="17862993552"},
+    {Name="Sacred Summoning Start", ID="17862992081"},
+    {Name="Controller Rage", ID="17861843594"},
+    {Name="Spare Change", ID="17861773600"},
+    {Name="Boo! Tomato", ID="17863116997"},
+    {Name="Bottle Flip", ID="17863045150"},
+    {Name="Golf", ID="17863077772"},
+    {Name="Shigure UI Dance", ID="17861893708"},
+    {Name="Hand Cross Dance", ID="17861844224"},
+    {Name="New Chair", ID="17861869602"},
+    {Name="Cat Dancey", ID="17861842039"},
+    {Name="Fresh", ID="17863085690"}
+}
+
+for _, emote in pairs(emotesPart1) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart2 = {
+    {Name="Cute Spin", ID="17861849696"},
+    {Name="Leapin", ID="17863299880"},
+    {Name="Clubbin", ID="17861870429"},
+    {Name="Rock Emote", ID="17862419034"},
+    {Name="Hair Dryer", ID="17862799431"},
+    {Name="Club Dance", ID="17861842605"},
+    {Name="Signature Shuffle", ID="17877281437"},
+    {Name="Sharp Shooter", ID="17861840167"},
+    {Name="Thinking", ID="17862470017"},
+    {Name="Knife Trick", ID="17862340094"},
+    {Name="Frump Nuts", ID="17863040703"},
+    {Name="Rough Snack", ID="17862170658"},
+    {Name="Eureka!!", ID="17861846501"},
+    {Name="Road Trip", ID="17863104140"},
+    {Name="Point Shuffle", ID="17861883497"},
+    {Name="Watermelon Spin", ID="17863063827"},
+    {Name="8Bit Arm Sway Dance", ID="17861873461"},
+    {Name="Sassy Walk", ID="17861893094"},
+    {Name="Helicopter Start", ID="17862998594"},
+    {Name="Helicopter", ID="17862997402"},
+    {Name="Club Shuffle", ID="17861834531"},
+    {Name="Head Tap", ID="17863050431"},
+    {Name="Listen", ID="17861894459"},
+    {Name="Can't See Me", ID="17862366649"},
+    {Name="Rest", ID="15443682006"},
+    {Name="Idle", ID="15443688094"},
+    {Name="End", ID="15443689801"},
+    {Name="Cross", ID="16525536622"},
+    {Name="Party Lover", ID="16528092313"},
+    {Name="Angy", ID="16526624122"},
+    {Name="Prideful", ID="16526164064"},
+    {Name="Soccer", ID="16592100518"},
+    {Name="Red Card", ID="16591707771"},
+    {Name="Your Grave", ID="16598916589"},
+    {Name="Slingshot", ID="16598695404"},
+    {Name="Paddleball Start", ID="16523080348"},
+    {Name="Paddleball Idle", ID="16523084292"},
+    {Name="Paddleball End", ID="16523235955"},
+    {Name="Show me", ID="16039093008"},
+    {Name="Swept Back", ID="16746892678"},
+    {Name="What'd You Say", ID="17266193826"},
+    {Name="Robot", ID="17086754292"},
+    {Name="Bye Bye", ID="16047480326"},
+    {Name="Shy", ID="16524848169"},
+    {Name="Thumbs Up", ID="16524522673"},
+    {Name="Nah, I'd win", ID="16746843881"},
+    {Name="Bang", ID="16746824621"},
+    {Name="Thumbs Down", ID="16524478599"},
+    {Name="Nuh uh", ID="16054192884"},
+    {Name="I'll Win", ID="16039070113"},
+    {Name="Coffin Exit", ID="16002448046"},
+    {Name="Coffin Idle", ID="16002449836"},
+    {Name="Coffin End", ID="16002450289"}
+}
+
+for _, emote in pairs(emotesPart2) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart3 = {
+    {Name="SLOW SPIN", ID="16599248351"},
+    {Name="SLOW SPIN End", ID="16599253604"},
+    {Name="Get up", ID="15968649951"},
+    {Name="Get up Idle", ID="15968655778"},
+    {Name="Get up End", ID="15968735423"},
+    {Name="Side Ways Sit", ID="17121881258"},
+    {Name="Side Ways Sit Idle", ID="17121883892"},
+    {Name="Side Ways Sit End", ID="17121885697"},
+    {Name="Sit 3", ID="15443954093"},
+    {Name="Sit 3 Idle", ID="15443956544"},
+    {Name="Sit 3 End", ID="15443958574"},
+    {Name="Higher", ID="15503060232"},
+    {Name="Higher End", ID="15503060948"},
+    {Name="Disgraced", ID="15507137974"},
+    {Name="Disgraced End", ID="15507138928"},
+    {Name="360", ID="16002726844"},
+    {Name="Jumping Jacks", ID="16002745906"},
+    {Name="Calculated", ID="16002681909"},
+    {Name="Huh?", ID="16523856701"},
+    {Name="8 Bit", ID="15684759074"},
+    {Name="Car Idle", ID="15684890301"},
+    {Name="Car Idle 2", ID="15684902941"},
+    {Name="March", ID="15962443652"},
+    {Name="Itadori Walk", ID="15962326593"},
+    {Name="Mahito Run", ID="15958281277"},
+    {Name="Come Here", ID="16746746641"},
+    {Name="Come", ID="15958227342"},
+    {Name="Fall", ID="17107937300"},
+    {Name="Surge", ID="17120750680"},
+    {Name="SIUUUU", ID="17122171961"},
+    {Name="Joy", ID="17120709682"},
+    {Name="Dab", ID="17121243447"},
+    {Name="Infinite Dabs", ID="17121290432"},
+    {Name="Spin", ID="17120734491"},
+    {Name="Rock N, Roll", ID="15992808444"},
+    {Name="Party Is Life", ID="17121045260"},
+    {Name="Cat Dance", ID="17121145590"},
+    {Name="Hood Jam", ID="17096456977"},
+    {Name="Wave Looped", ID="15684011459"},
+    {Name="Gun Shoot", ID="15956876217"},
+    {Name="Flex", ID="15673779407"},
+    {Name="Robotic", ID="17097794422"},
+    {Name="Hurricane", ID="17097909230"},
+    {Name="All Around", ID="17097820306"},
+    {Name="Think!", ID="17097712387"},
+    {Name="Knocked Out", ID="17097745294"},
+    {Name="Respect", ID="17106858586"},
+    {Name="Hunter Salute", ID="15673641958"},
+    {Name="Bow of Respect", ID="15673683215"},
+    {Name="Rally", ID="15673595096"},
+    {Name="Expendable", ID="15488510937"},
+    {Name="Float", ID="15099756132"},
+    {Name="Stay Down", ID="15290114868"},
+    {Name="Energized", ID="15099686953"},
+    {Name="Warm up", ID="14611879113"},
+    {Name="Levitating", ID="17106169665"},
+    {Name="Groovy Swing", ID="17096779665"},
+    {Name="Crawl", ID="17106188784"},
+    {Name="Get Down", ID="17266358630"},
+    {Name="Anxiety", ID="17266410350"},
+    {Name="Eyes On Me", ID="17266385960"},
+    {Name="Sigh", ID="17266265770"},
+    {Name="Get it", ID="17266330796"},
+    {Name="Sway", ID="17268390209"},
+    {Name="Wild", ID="17266311371"},
+    {Name="Cross Step", ID="17096590136"},
+    {Name="One Hand Pushup", ID="17086698204"},
+    {Name="Two Hand Pushup", ID="17086696468"},
+    {Name="Shoulder Brush", ID="14611931363"},
+    {Name="Mad", ID="17086333563"},
+    {Name="Jumpscared", ID="17086298638"},
+    {Name="Disconnect", ID="17086423985"},
+    {Name="Snap", ID="17097068597"},
+    {Name="Freaky", ID="17086544068"},
+    {Name="Shrug", ID="17108883110"},
+    {Name="Gun Flex", ID="17108683768"},
+    {Name="Point Forward", ID="17097146599"},
+    {Name="Shiver", ID="17097114800"},
+    {Name="Shuffle Steps", ID="17086507535"},
+    {Name="Smooth Vibe", ID="17097177356"},
+    {Name="Trap Dance", ID="17097225104"},
+    {Name="Breakdown", ID="17097275344"},
+    {Name="Down Low", ID="17096931722"},
+    {Name="Shake A Leg", ID="17106937938"},
+    {Name="Victory Dance", ID="15089788940"}
+}
+
+for _, emote in pairs(emotesPart3) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart4 = {
+    {Name="Let's Go", ID="18450770138"},
+    {Name="Silly Dance", ID="18450448457"},
+    {Name="Start Throne", ID="18450698238"},
+    {Name="Idle Throne", ID="18450697195"},
+    {Name="WHAT", ID="18450685221"},
+    {Name="XD", ID="18450597765"},
+    {Name="Free Flow", ID="18450531343"},
+    {Name="Jiggy", ID="18450480375"},
+    {Name="All Yours", ID="18450406917"},
+    {Name="I Love TSB", ID="18450373829"},
+    {Name="Guided", ID="18459646696"},
+    {Name="Stroll", ID="18459518606"},
+    {Name="Jello", ID="18459402335"},
+    {Name="Weaking", ID="18459317750"},
+    {Name="Tornado", ID="18459285150"},
+    {Name="Kitchen", ID="18459220516"},
+    {Name="Start Void", ID="18459178353"},
+    {Name="Idle Void", ID="18459183268"},
+    {Name="Drum Major", ID="18418313278"},
+    {Name="Owl", ID="17292549897"},
+    {Name="Take an L", ID="18614546390"},
+    {Name="RK Coin Trick", ID="18715907469"},
+    {Name="CarRide", ID="18717109979"},
+    {Name="CarRide Victim", ID="18717114746"},
+    {Name="Sturdy", ID="18717119948"},
+    {Name="Boppin", ID="18717124767"},
+    {Name="Chrono", ID="18717128518"},
+    {Name="Moves", ID="18717137258"},
+    {Name="Chill", ID="18717170076"},
+    {Name="Backwards", ID="17863082627"},
+    {Name="Poke Dance", ID="17861884104"},
+    {Name="8Bit Celebration", ID="17863041811"},
+    {Name="Ohio Dance", ID="17861841334"},
+    {Name="Kaz Kick", ID="17861870996"},
+    {Name="Stepping Shuffle", ID="17861898789"},
+    {Name="Speedy Legs", ID="17863047324"},
+    {Name="Excited Shuffle", ID="17863091228"},
+    {Name="Arm Sway", ID="17861898147"},
+    {Name="Odyssey Dance", ID="17861881962"},
+    {Name="AKUMA", ID="17861844708"},
+    {Name="Sacred Summoning Start", ID="17862993552"},
+    {Name="Sacred Summoning", ID="17862992081"},
+    {Name="Controller Rage", ID="17861843594"},
+    {Name="Spare Change", ID="17861773600"},
+    {Name="Boo! Tomato", ID="17863116997"},
+    {Name="Bottle Flip", ID="17863045150"},
+    {Name="Golf", ID="17863077772"},
+    {Name="Shigure UI Dance", ID="17861893708"},
+    {Name="Hand Cross Dance", ID="17861844224"},
+    {Name="New Chair", ID="17861869602"},
+    {Name="Cat Dancey", ID="17861842039"},
+    {Name="Fresh", ID="17863085690"},
+    {Name="Cute Spin", ID="17861849696"},
+    {Name="Leapin", ID="17863299880"},
+    {Name="Clubbin", ID="17861870429"},
+    {Name="Rock Emote", ID="17862419034"},
+    {Name="Hair Dryer", ID="17862799431"},
+    {Name="Club Dance", ID="17861842605"},
+    {Name="Signature Shuffle", ID="17877281437"},
+    {Name="Sharp Shooter", ID="17861840167"},
+    {Name="Thinking", ID="17862470017"},
+    {Name="Knife Trick", ID="17862340094"},
+    {Name="Frump Nuts", ID="17863040703"},
+    {Name="Rough Snack", ID="17862170658"},
+    {Name="Eureka!!", ID="17861846501"},
+    {Name="Road Trip", ID="17863104140"},
+    {Name="Point Shuffle", ID="17861883497"},
+    {Name="Watermelon Spin", ID="17863063827"},
+    {Name="8Bit Arm Sway Dance", ID="17861873461"},
+    {Name="Sassy Walk", ID="17861893094"},
+    {Name="Helicopter Start", ID="17862998594"},
+    {Name="Helicopter", ID="17862997402"},
+    {Name="Club Shuffle", ID="17861834531"},
+    {Name="Head Tap", ID="17863050431"},
+    {Name="Listen", ID="17861894459"},
+    {Name="Can't See Me", ID="17862366649"},
+    {Name="Rest", ID="15443682006"},
+    {Name="Rest Idle", ID="15443688094"},
+    {Name="Rest End", ID="15443689801"}
+}
+
+for _, emote in pairs(emotesPart4) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart5 = {
+    {Name="Cross", ID="16525536622"},
+    {Name="Party Lover", ID="16528092313"},
+    {Name="Angy", ID="16526624122"},
+    {Name="Prideful", ID="16526164064"},
+    {Name="Soccer", ID="16592100518"},
+    {Name="Red Card", ID="16591707771"},
+    {Name="Your Grave", ID="16598916589"},
+    {Name="Slingshot", ID="16598695404"},
+    {Name="Paddleball Start", ID="16523080348"},
+    {Name="Paddleball Idle", ID="16523084292"},
+    {Name="Paddleball End", ID="16523235955"},
+    {Name="Show me", ID="16039093008"},
+    {Name="Swept Back", ID="16746892678"},
+    {Name="What'd You Say", ID="17266193826"},
+    {Name="Robot", ID="17086754292"},
+    {Name="Bye Bye", ID="16047480326"},
+    {Name="Shy", ID="16524848169"},
+    {Name="Thumbs Up", ID="16524522673"},
+    {Name="Nah, I'd win", ID="16746843881"},
+    {Name="Bang", ID="16746824621"},
+    {Name="Thumbs Down", ID="16524478599"},
+    {Name="Nuh uh", ID="16054192884"},
+    {Name="I'll Win", ID="16039070113"},
+    {Name="Coffin Exit", ID="16002448046"},
+    {Name="Coffin Idle", ID="16002449836"},
+    {Name="Coffin End", ID="16002450289"},
+    {Name="SLOW SPIN", ID="16599248351"},
+    {Name="SLOW SPIN End", ID="16599253604"},
+    {Name="Get up", ID="15968649951"},
+    {Name="Get up Idle", ID="15968655778"},
+    {Name="Get up End", ID="15968735423"},
+    {Name="Side Ways Sit", ID="17121881258"},
+    {Name="Side Ways Sit Idle", ID="17121883892"},
+    {Name="Side Ways Sit End", ID="17121885697"},
+    {Name="Sit 3", ID="15443954093"},
+    {Name="Sit 3 Idle", ID="15443956544"},
+    {Name="Sit 3 End", ID="15443958574"},
+    {Name="Higher", ID="15503060232"},
+    {Name="Higher End", ID="15503060948"},
+    {Name="Disgraced", ID="15507137974"},
+    {Name="Disgraced End", ID="15507138928"},
+    {Name="360", ID="16002726844"},
+    {Name="Jumping Jacks", ID="16002745906"},
+    {Name="Calculated", ID="16002681909"},
+    {Name="Huh?", ID="16523856701"},
+    {Name="8 Bit", ID="15684759074"},
+    {Name="Car Idle", ID="15684890301"},
+    {Name="Car Idle 2", ID="15684902941"},
+    {Name="March", ID="15962443652"},
+    {Name="Itadori Walk", ID="15962326593"},
+    {Name="Mahito Run", ID="15958281277"},
+    {Name="Come Here", ID="16746746641"},
+    {Name="Come", ID="15958227342"},
+    {Name="Fall", ID="17107937300"},
+    {Name="Surge", ID="17120750680"},
+    {Name="SIUUUU", ID="17122171961"},
+    {Name="Joy", ID="17120709682"},
+    {Name="Dab", ID="17121243447"},
+    {Name="Infinite Dabs", ID="17121290432"},
+    {Name="Spin", ID="17120734491"},
+    {Name="Rock N, Roll", ID="15992808444"},
+    {Name="Party Is Life", ID="17121045260"},
+    {Name="Cat Dance", ID="17121145590"},
+    {Name="Hood Jam", ID="17096456977"},
+    {Name="Wave Looped", ID="15684011459"},
+    {Name="Gun Shoot", ID="15956876217"},
+    {Name="Flex", ID="15673779407"},
+    {Name="Robotic", ID="17097794422"},
+    {Name="Hurricane", ID="17097909230"},
+    {Name="All Around", ID="17097820306"}
+}
+
+for _, emote in pairs(emotesPart5) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart6 = {
+    {Name="Think!", ID="17097712387"},
+    {Name="Knocked Out", ID="17097745294"},
+    {Name="Respect", ID="17106858586"},
+    {Name="Hunter Salute", ID="15673641958"},
+    {Name="Bow of Respect", ID="15673683215"},
+    {Name="Rally", ID="15673595096"},
+    {Name="Expendable", ID="15488510937"},
+    {Name="Float", ID="15099756132"},
+    {Name="Stay Down", ID="15290114868"},
+    {Name="Energized", ID="15099686953"},
+    {Name="Warm up", ID="14611879113"},
+    {Name="Levitating", ID="17106169665"},
+    {Name="Groovy Swing", ID="17096779665"},
+    {Name="Crawl", ID="17106188784"},
+    {Name="Get Down", ID="17266358630"},
+    {Name="Anxiety", ID="17266410350"},
+    {Name="Eyes On Me", ID="17266385960"},
+    {Name="Sigh", ID="17266265770"},
+    {Name="Get it", ID="17266330796"},
+    {Name="Sway", ID="17268390209"},
+    {Name="Wild", ID="17266311371"},
+    {Name="Cross Step", ID="17096590136"},
+    {Name="One Hand Pushup", ID="17086698204"},
+    {Name="Two Hand Pushup", ID="17086696468"},
+    {Name="Shoulder Brush", ID="14611931363"},
+    {Name="Mad", ID="17086333563"},
+    {Name="Jumpscared", ID="17086298638"},
+    {Name="Disconnect", ID="17086423985"},
+    {Name="Snap", ID="17097068597"},
+    {Name="Freaky", ID="17086544068"},
+    {Name="Shrug", ID="17108883110"},
+    {Name="Gun Flex", ID="17108683768"},
+    {Name="Point Forward", ID="17097146599"},
+    {Name="Shiver", ID="17097114800"},
+    {Name="Shuffle Steps", ID="17086507535"},
+    {Name="Smooth Vibe", ID="17097177356"},
+    {Name="Trap Dance", ID="17097225104"},
+    {Name="Breakdown", ID="17097275344"},
+    {Name="Unknown 1", ID="17097313490"},
+    {Name="Unknown 2", ID="17097370518"},
+    {Name="Down Low", ID="17096931722"},
+    {Name="Shake A Leg", ID="17106937938"},
+    {Name="Unknown 3", ID="17097035602"},
+    {Name="Unknown 4", ID="17086440627"},
+    {Name="Unknown 5", ID="17086321064"},
+    {Name="Unknown 6", ID="14496508275"},
+    {Name="Unknown 7", ID="17097940507"},
+    {Name="Victory Dance", ID="15089788940"},
+    {Name="Unknown 8", ID="15089520783"},
+    {Name="Unknown 9", ID="15090141089"},
+    {Name="Unknown 10", ID="15090301130"},
+    {Name="Do A Flip", ID="17292855624"},
+    {Name="Slick Back", ID="16746808371"},
+    {Name="Power Up", ID="17292505729"},
+    {Name="Unknown 11", ID="16522110024"},
+    {Name="Unknown 12", ID="15684849948"},
+    {Name="Unknown 13", ID="15674141176"},
+    {Name="Unknown 14", ID="15090101157"},
+    {Name="WHY?", ID="15285521399"},
+    {Name="Sit 2", ID="15099893403"},
+    {Name="Unknown 15", ID="15503004900"}
+}
+
+for _, emote in pairs(emotesPart6) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart7 = {
+    {Name="Point Down", ID="15446959450"},
+    {Name="Head Spin", ID="15090032390"},
+    {Name="Unknown 16", ID="15090734317"},
+    {Name="Ramen Sit", ID="15503201875"},
+    {Name="Ramen Idle", ID="15503362953"},
+    {Name="Wallet Check", ID="16592787958"},
+    {Name="Nerf This", ID="15502978256"},
+    {Name="Nerf This Idle", ID="15502977193"},
+    {Name="Party Blower", ID="16599412902"},
+    {Name="Party Blower Idle", ID="16599398107"},
+    {Name="Eye Pop", ID="17097409396"},
+    {Name="Unknown 17", ID="15297647499"},
+    {Name="Kitty Cat", ID="15099900787"},
+    {Name="The Strongest Rocks", ID="15438891684"},
+    {Name="Unknown 18", ID="15100081900"},
+    {Name="Unknown 19", ID="15271569844"},
+    {Name="Unknown 20", ID="16524237104"},
+    {Name="Unknown 21", ID="16524243757"},
+    {Name="Unknown 22", ID="15674077481"},
+    {Name="Unknown 23", ID="15674164857"},
+    {Name="SuperHero Pose", ID="17109009771"},
+    {Name="SuperHero Idle", ID="17109012516"},
+    {Name="SuperHero End", ID="17109013631"},
+    {Name="Unknown 24", ID="17108971736"},
+    {Name="Unknown 25", ID="17108973561"},
+    {Name="Unknown 26", ID="17108974875"},
+    {Name="Stylish Flip 1", ID="17086569715"},
+    {Name="Stylish Flip 2", ID="17086601693"},
+    {Name="Stylish Flip 3", ID="17086594393"},
+    {Name="Unknown 27", ID="15673860575"},
+    {Name="Unknown 28", ID="15673865087"},
+    {Name="First Rule", ID="15503532950"},
+    {Name="First Rule Idle", ID="15503546989"},
+    {Name="Unknown 29", ID="15284324734"},
+    {Name="New Sheriff", ID="15310973900"},
+    {Name="Unknown 30", ID="15283197429"},
+    {Name="Unknown 31", ID="15271677861"},
+    {Name="Lean Back", ID="17106924052"},
+    {Name="Unknown 32", ID="17107076756"},
+    {Name="Unknown 33", ID="17120966975"},
+    {Name="Unknown 34", ID="17107197570"},
+    {Name="Unknown 35", ID="17107199838"},
+    {Name="Unknown 36", ID="17120842242"},
+    {Name="Unknown 37", ID="17121769642"},
+    {Name="Unknown 38", ID="17120866178"},
+    {Name="Unknown 38 Idle", ID="17120873919"},
+    {Name="Unknown 38 End", ID="17120870445"},
+    {Name="Unknown 39", ID="17121695329"},
+    {Name="Unknown 40", ID="17122214043"},
+    {Name="Unknown 40 Idle", ID="17122254184"},
+    {Name="Unknown 40 End", ID="17122265672"},
+    {Name="Air Horn", ID="17292579443"},
+    {Name="Mic Drop", ID="17106365733"},
+    {Name="Luv This Game", ID="17269134625"},
+    {Name="Unknown 41", ID="17269079177"},
+    {Name="Unknown 42", ID="17268549637"}
+}
+
+for _, emote in pairs(emotesPart7) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart8 = {
+    {Name="Sad Times", ID="17269023470"},
+    {Name="Sad Times Idle", ID="17268991944"},
+    {Name="Me Reading The Book That", ID="17268619636"},
+    {Name="Unknown 43", ID="17268633540"},
+    {Name="Pizza Delivery", ID="17268742277"},
+    {Name="Angry Riff", ID="17268926242"},
+    {Name="Unknown 44", ID="17268859608"},
+    {Name="Magic Carpet", ID="17268716692"},
+    {Name="Unknown 45", ID="17268369862"},
+    {Name="Yummy Watermelon", ID="17268468485"},
+    {Name="Dry Lips", ID="17268308385"},
+    {Name="Unknown 46 Idle", ID="17107015056"},
+    {Name="Unknown 46 Idle 2", ID="17107016598"},
+    {Name="Unknown 47", ID="17105983229"},
+    {Name="WATERMELON", ID="17137575195"},
+    {Name="Unknown 48", ID="15090459593"},
+    {Name="Unknown 49", ID="15310866392"},
+    {Name="Unknown 50", ID="15283329867"},
+    {Name="Unknown 51", ID="15487200157"},
+    {Name="Unknown 52", ID="17292934579"},
+    {Name="Unknown 53", ID="15090273850"},
+    {Name="Unknown 54", ID="15092699174"},
+    {Name="Heartful Salute", ID="17097486020"},
+    {Name="Unknown 55", ID="15089930092"},
+    {Name="Unknown 56", ID="17086291067"},
+    {Name="Unknown 57", ID="15018688063"},
+    {Name="Unknown 58", ID="17086225519"},
+    {Name="Unknown 59", ID="15310466614"},
+    {Name="Unknown 60", ID="14678167232"},
+    {Name="Unknown 61", ID="14697228259"},
+    {Name="Unknown 62", ID="15018466007"},
+    {Name="Unknown 63", ID="14520410356"},
+    {Name="Unknown 64", ID="14659143045"},
+    {Name="Unknown 65", ID="14495337027"},
+    {Name="Unknown 66", ID="14494902453"}
+}
+
+for _, emote in pairs(emotesPart8) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart9 = {
+    {Name="Traditional Duel", ID="15502751480"},
+    {Name="Clap Clap", ID="16038562573"},
+    {Name="Rock Paper Scissor", ID="14519894954"},
+    {Name="Unknown 67 Victim", ID="15963617746"},
+    {Name="Unknown 68 Victim", ID="15963602367"},
+    {Name="Friendly Hug", ID="17097627771"},
+    {Name="Friendly Hug Idle", ID="17097648428"},
+    {Name="Friendly Hug Victim", ID="17097651485"},
+    {Name="Camp", ID="17096821069"},
+    {Name="Unknown 69", ID="17106475377"},
+    {Name="Fresh Cut", ID="17106466215"},
+    {Name="Fresh Cut Idle", ID="17106475377"},
+    {Name="Fresh Cut Victim", ID="17106484670"},
+    {Name="Unknown 70", ID="17108522793"},
+    {Name="Ping Pong", ID="17108345170"},
+    {Name="Ping Pong Idle", ID="17108399691"},
+    {Name="Duel Request", ID="17465453123"},
+    {Name="Duel Request Idle", ID="17464923657"},
+    {Name="Duel Request Victim", ID="17465871318"},
+    {Name="Unknown 71 Idle", ID="17096829509"},
+    {Name="Unknown 71 Victim", ID="17096821069"},
+    {Name="Unknown 71", ID="17096828632"},
+    {Name="Drag", ID="17120635926"},
+    {Name="Drag Victim", ID="17120643504"},
+    {Name="Carry", ID="17096486393"},
+    {Name="Carry Victim", ID="17096487990"},
+    {Name="Cart Ride", ID="15685307415"},
+    {Name="Cart Ride 2", ID="15685170827"},
+    {Name="Pretty Please", ID="16584277208"},
+    {Name="Respectful Bow", ID="16584194737"},
+    {Name="Unknown 72", ID="15486180872"},
+    {Name="Bizarre Handshake", ID="15018853350"},
+    {Name="High Five", ID="15223422794"},
+    {Name="Fist Bump", ID="15290322193"},
+    {Name="Dap Me Up", ID="15007878015"},
+    {Name="Unknown 73", ID="14014580605"},
+    {Name="Unknown 74", ID="15017946867"},
+    {Name="Unknown 75", ID="13874517117"},
+    {Name="You Hear That?", ID="15018219692"},
+    {Name="Unknown 76", ID="15017959263"},
+    {Name="Unknown 77", ID="13874572427"},
+    {Name="Salt Shaker", ID="15453855128"},
+    {Name="You Alright?", ID="14612894074"},
+    {Name="Unknown 78", ID="15092657164"},
+    {Name="Unknown 79", ID="15438946008"},
+    {Name="Unknown 80", ID="15453677841"},
+    {Name="And One", ID="14616272668"},
+    {Name="Unknown 81", ID="14613239786"},
+    {Name="Unknown 82", ID="14403375793"},
+    {Name="Pipe Down", ID="14406991505"},
+    {Name="Unknown 83", ID="15674270929"}
+}
+
+for _, emote in pairs(emotesPart9) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart10 = {
+    {Name="Take My Money", ID="16593648830"},
+    {Name="Unknown 84", ID="14498295360"},
+    {Name="Unknown 85", ID="14498033288"},
+    {Name="Fresh Fries", ID="14406679583"},
+    {Name="Unknown 86", ID="14056341330"},
+    {Name="Keyboard Warrior", ID="14357783332"},
+    {Name="Unknown 87", ID="15290188901"},
+    {Name="Unknown 88", ID="14056032417"},
+    {Name="Unknown 89", ID="14399170033"},
+    {Name="No Limit", ID="13777338337"},
+    {Name="Unknown 90", ID="13777407704"},
+    {Name="Unknown 91", ID="13736115009"},
+    {Name="Pinguin", ID="13735821189"},
+    {Name="Unknown 92", ID="8887084105"},
+    {Name="Unknown 93", ID="15020965094"},
+    {Name="Sweaty", ID="15488553333"},
+    {Name="Cry", ID="13874287198"},
+    {Name="Unknown 94", ID="13874117043"},
+    {Name="Bring It", ID="13801083337"},
+    {Name="Unknown 95", ID="14056379526"},
+    {Name="Unknown 96", ID="13773978314"},
+    {Name="Unknown 97", ID="14056367009"},
+    {Name="Unknown 98", ID="14056370647"},
+    {Name="Fancy Reading", ID="16583901798"},
+    {Name="Fancy Reading Idle", ID="16583918087"},
+    {Name="Rocket Ride", ID="16584466961"},
+    {Name="Unknown 99", ID="13735596559"},
+    {Name="4K", ID="13735352472"},
+    {Name="Unknown 100", ID="16522919821"},
+    {Name="Selfie In Style", ID="15091452031"},
+    {Name="Unknown 101", ID="13727204855"},
+    {Name="Unknown 102", ID="18231574269"},
+    {Name="Unknown 103", ID="14056388573"},
+    {Name="Unknown 104", ID="13736196609"},
+    {Name="Sleeping", ID="14348083862"},
+    {Name="Unknown 105", ID="14351868272"},
+    {Name="Unknown 106", ID="17086054994"},
+    {Name="Silly Walk", ID="16585974532"},
+    {Name="Unknown 107", ID="14405440932"},
+    {Name="Unknown 108", ID="15237948811"},
+    {Name="Happy Steps", ID="16021093085"},
+    {Name="Unknown 109", ID="14352383313"},
+    {Name="Unknown 110", ID="13773998974"},
+    {Name="Unknown 111", ID="13721154327"},
+    {Name="Unknown 112", ID="13735938143"},
+    {Name="Unknown 113", ID="13716964686"}
+}
+
+for _, emote in pairs(emotesPart10) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+local emotesPart11 = {
+    {Name="The Hunt EMOTES", ID="16719053698"},
+    {Name="Eighth Key", ID="16719107050"},
+    {Name="Tenth Key", ID="16725121777"},
+    {Name="Sixth Key", ID="16725167915"},
+    {Name="Ninth Key", ID="16719149848"},
+    {Name="First Key", ID="16719183472"},
+    {Name="Seventh Key", ID="16719205513"},
+    {Name="Third Key", ID="16725337143"},
+    {Name="Fourth Key", ID="16719220174"},
+    {Name="Fifth Key", ID="16725350277"},
+    {Name="Second Key", ID="16719226293"},
+    {Name="Monster Mash Potion", ID="35654637"},
+    {Name="Horn", ID="18897636555"},
+    {Name="Unimpressed", ID="18897731065"},
+    {Name="Think!!! Victim", ID="18897721681"},
+    {Name="Think!!! User", ID="18897718868"},
+    {Name="Cross 2 Start", ID="18897553669"},
+    {Name="Cross 2 Loop", ID="18897551628"},
+    {Name="Lalala User", ID="18897652035"},
+    {Name="Lalala Victim", ID="18897657904"},
+    {Name="Watch", ID="18897733312"},
+    {Name="Headbanger", ID="18897492506"},
+    {Name="Emote", ID="18897531388"},
+    {Name="Forever Start", ID="18897617695"},
+    {Name="Forever Loop", ID="18897615186"},
+    {Name="Stay Back", ID="18897715873"},
+    {Name="Chosen Loop", ID="18897538537"},
+    {Name="Chosen Start", ID="18897534746"},
+    {Name="Chosen End", ID="18897540724"},
+    {Name="Bhop", ID="18897499721"}
+}
+
+for _, emote in pairs(emotesPart11) do
+    -- converted button
+
+        Name = emote.Name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+
+            local anim = Instance.new("Animation")
+            anim.AnimationId = "rbxassetid://" .. emote.ID
+            local track = humanoid:LoadAnimation(anim)
+            track:Play()
+        end,
+    })
+end
+
+
+local Tab3 = Window:CreateTab("|Character Animations|", 1234567890)
+
+-- ===== Helper function =====
+local function CreateAnimationButton(section, name, id)
+    section:CreateButton({
+        Name = name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local humanoid = char:WaitForChild("Humanoid")
+            local animation = Instance.new("Animation")
+            animation.AnimationId = "rbxassetid://"..id
+            local track = humanoid:LoadAnimation(animation)
+            track:Play()
+        end
+    })
+end
+
+-- ===== Default Animations =====
+local DefaultSection = Tab3:CreateSection("Default Animations")
+local DefaultAnimations = {
+    {"Block", "18564704039"}, {"UpperCut", "18535946209"}, {"Downslam", "18535943546"},
+    {"Dash Back", "18715851298"}, {"Dash Left", "18715862570"}, {"Dash Right", "18715864221"},
+    {"Dash Forward", "18715858574"}, {"Knockback", "18715868927"},
+    {"Hit Reaction (1)", "18715963731"}, {"Hit Reaction (2)", "18715968643"}, {"Hit Reaction (3)", "18715970465"},
+    {"Dash Hit", "18715977233"}, {"WalkR", "18835742066"}, {"WalkL", "18835753880"},
+    {"WalkFW", "18835769288"}, {"WalkBW", "18835439554"}, {"WalkBwR", "18835994497"}, {"WalkBwL", "18836005878"},
+    {"Run", "18508551562"}, {"Idle", "18933416371"}, {"DownSlam Finisher", "17859055671"},
+    {"DownSlam Finisher 1", "17858878027"}, {"DownSlam Finisher 2", "17858997926"}, {"DownSlam Finisher 3", "17859015788"},
+}
+for _, anim in pairs(DefaultAnimations) do
+    CreateAnimationButton(DefaultSection, anim[1], anim[2])
+end
+
+-- ===== Snowball Animations =====
+local SnowballSection = Tab3:CreateSection("Snowball Animations")
+local SnowballAnimations = {
+    {"Snowball Grab", "111364629436380"}, {"Snowball Idle", "137841251329955"}, {"Snowball Walk", "89642715363301"},
+    {"Snowball Throw", "128022763591042"}, {"Snowball Crit", "136657630525344"},
+}
+for _, anim in pairs(SnowballAnimations) do
+    CreateAnimationButton(SnowballSection, anim[1], anim[2])
+end
+
+-- ===== Trashcan Animations =====
+local TrashcanSection = Tab3:CreateSection("Trashcan Animations")
+local TrashcanAnimations = {
+    {"Pickup Miss", "13814873045"}, {"Successful Pickup", "13814919604"},
+    {"Idle with Trashcan", "13813450889"}, {"Throw", "13813955149"},
+}
+for _, anim in pairs(TrashcanAnimations) do
+    CreateAnimationButton(TrashcanSection, anim[1], anim[2])
+end
+
+-- ===== Weakest Dummy =====
+local DummySection = Tab3:CreateSection("Weakest Dummy Animations")
+local DummyAnimations = {
+    {"Attack Victim", "18440398084"}, {"Attack", "18440406788"},
+}
+for _, anim in pairs(DummyAnimations) do
+    CreateAnimationButton(DummySection, anim[1], anim[2])
+end
+
+-- ===== TSB Build Mode =====
+local TSBSection = Tab3:CreateSection("TSB Build Mode Animations")
+local TSBAnimations = {
+    {"Fly Left", "17124105294"}, {"Fly Right", "17124112547"}, {"Fly Back", "17124067635"},
+    {"Fly Forward", "17124063826"}, {"Fly Idle", "17124061663"},
+}
+for _, anim in pairs(TSBAnimations) do
+    CreateAnimationButton(TSBSection, anim[1], anim[2])
+end
+
+-- ===== Genos =====
+local GenosSection = Tab3:CreateSection("Genos Animations")
+local GenosAnimations = {
+    {"Spawn", "18716464560"}, {"Wall Combo", "18716485513"}, {"Wall Combo Victim", "18716505052"},
+    {"M1 (1)", "18716472014"}, {"M1 (2)", "18716475828"}, {"M1 (3)", "18716477298"}, {"M1 (4)", "18716478642"},
+    {"Ignition Burst", "18716481342"}, {"Ignition Burst Finisher", "71060716968719"}, {"Ignition Burst Finisher Throw", "105811521074269"},
+    {"Ignition Burst Victim Finisher", "114763770211803"}, {"Ignition Burst Victim Finisher Throw", "88677394781901"},
+    {"Machine Gun Blows", "18716470698"}, {"Machine Gun Blows Finisher", "12971270638"}, {"Ignition Burst Hit", "12509505723"},
+    {"Jet Drive Finisher", "14542032218"}, {"Blitz Shot", "12618271998"}, {"Jet Drive", "12684390285"}, {"Jet Drive Land", "12684185971"},
+    {"Awakening", "18778839005"}, {"Awakening Thunder Kick", "14721837245"}, {"Awk Thunder Kick Hit", "13047366862"},
+    {"Awk Thunder Kick Hit Land", "13047328208"}, {"Awk Speedblitz Dropkick", "12832505612"}, {"Awk Speedblitz Dropkick Hit", "12830917034"},
+    {"Awk Speedblitz Dropkick Hit Land", "12832023590"}, {"Awk Flamewave Cannon", "13083332742"}, {"Awk Incinerate", "13146710762"},
+}
+for _, anim in pairs(GenosAnimations) do
+    CreateAnimationButton(GenosSection, anim[1], anim[2])
+end
+
+-- ===== Sorcerer =====
+local SorcererSection = Tab3:CreateSection("Sorcerer Animations")
+local SorcererAnimations = {
+    {"Attract", "13560306510"}, {"Repulse", "13073745835"}, {"Erase", "13071982935"},
+    {"Attract (Infinity Active)", "15121659862"}, {"Attract Loop", "15125307874"}, {"Attract End", "15124762088"},
+    {"Wall Combo", "18903642853"}, {"Wall Combo Victim", "18903644685"},
+}
+for _, anim in pairs(SorcererAnimations) do
+    CreateAnimationButton(SorcererSection, anim[1], anim[2])
+end
+
+-- ===== Crab Boss Animations =====
+local CrabSection = Tab3:CreateSection("Crab Boss Animations")
+local CrabAnimations = {
+    {"Death", "18894511179"}, {"Left Claw / Attack", "18893408267"}, {"Right Claw / Attack", "18893391798"},
+    {"Spawn", "18893355822"}, {"WalkBackwards", "18893363004"}, {"WalkForward", "18893366575"},
+    {"WalkLeft", "18893369850"}, {"WalkRight", "18893372474"}, {"Idle", "18893376101"},
+    {"RotateLeft", "18893378722"}, {"RotateRight", "18893381474"}, {"RightClaw1", "18893388903"},
+    {"Left Claw 1", "18893395278"}, {"Left Claw Slash", "18893399479"}, {"AcidSpit", "18893403844"},
+    {"BodySlam", "18893412159"}, {"MultiAttack", "18893415339"}, {"Jump", "18893417968"},
+    {"Beam", "18893419896"}, {"Stagger 2", "18893477234"}, {"Stunned", "18894271262"},
+}
+for _, anim in pairs(CrabAnimations) do
+    CreateAnimationButton(CrabSection, anim[1], anim[2])
+end
+
+-- ===== Atomic Animations =====
+local AtomicSection = Tab3:CreateSection("Atomic Animations")
+local AtomicAnimations = {
+    {"Spawn", "18716865654"}, {"Wall Combo", "18716867254"}, {"Wall Combo Victim", "18716944734"},
+    {"Block", "18716869912"}, {"M1 (1)", "15259161390"}, {"M1 (2)", "15240216931"}, {"M1 (3)", "15240176873"},
+    {"M1 (4)", "15162694192"}, {"Pinpoint Cut", "18716871856"}, {"Pinpoint Cut Victim", "18716974191"},
+    {"Pinpoint Cut Finisher", "15436465829"}, {"Pinpoint Cut Air Variant Finisher", "15436668469"},
+    {"Quick Slice", "15290930205"}, {"Atmos Cleave", "15145462680"}, {"Atmos Cleave Finisher", "15279910941"},
+    {"Atmos Cleave Victim", "18716941238"}, {"Run Sword Hand", "13379404053"}, {"Split Second Counter", "15334974550"},
+    {"Split Second Counter Miss", "15311685628"}, {"Split Second Counter Victim", "18716935181"},
+    {"Awakening", "18716880183"}, {"Sunrise", "18716884610"}, {"Sunrise Victim", "18716952942"},
+    {"Atomic Slash", "18716893399"}, {"Atomic Slash Land", "18716897393"}, {"Atomic Slash Victim", "18716949989"},
+    {"Sunset", "15520132233"}, {"Sunset Victim", "18716961861"}, {"Solar Cleave", "15676072469"},
+}
+for _, anim in pairs(AtomicAnimations) do
+    CreateAnimationButton(AtomicSection, anim[1], anim[2])
+end
+
+-- ===== Tatsumaki Animations =====
+local TatsumakiSection = Tab3:CreateSection("Tatsumaki Animations")
+local TatsumakiAnimations = {
+    {"M1 (1)", "16515503507"}, {"M1 (2)", "16515520431"}, {"M1 (3)", "16515448089"}, {"M1 (4)", "16552234590"},
+    {"Spawn Animation", "16136144568"}, {"Wall Combo", "16311141574"}, {"Wall Combo Victim", "16310732064"},
+    {"Crushing Pull", "16139108718"}, {"Crushing Pull Miss", "16139402582"}, {"Crushing Pull Victim??", "16139002631"},
+    {"Crushing Pull Victim", "16139000053"}, {"Crushing Pull Finisher", "16571909908"}, {"Crushing Pull Finisher Victim", "16572107136"},
+    {"Crushing Pull Variant", "16571461202"}, {"Windstorm Fury", "165158501532"}, {"Windstorm Fury Victim", "14658503037"},
+    {"Windstorm Fury Finisher", "120992533725535"}, {"Stone Coffin", "16431491215"}, {"Stone Coffin Finisher", "16708190748"},
+}
+for _, anim in pairs(TatsumakiAnimations) do
+    CreateAnimationButton(TatsumakiSection, anim[1], anim[2])
+end
+
+-- ===== Metal Bat Animations =====
+local MetalBatSection = Tab3:CreateSection("Metal Bat Animations")
+local MetalBatAnimations = {
+    {"Spawn", "18716634245"}, {"Wall Combo", "18716750744"}, {"Wall Combo Victim", "18716782310"},
+    {"Block", "18716638776"}, {"M1 (1)", "18716641152"}, {"M1 (2)", "18716644788"}, {"M1 (3)", "18716646083"},
+    {"M1 (4)", "18716647575"}, {"Grand Slam", "18716650993"}, {"Grand Slam Air", "18716655757"}, {"Grand Slam Hit Floor", "18716657427"},
+    {"Grand Slam Air Finisher", "18716690247"}, {"Grand Slam Air Finisher Victim", "18716777568"}, {"Foul Ball", "18716660379"},
+    {"Foul Ball Land", "18716683497"}, {"Foul Ball Finisher", "18716684967"}, {"Foul Ball Victim", "18716813950"},
+    {"Foul Ball Victim Finisher", "18716819019"}, {"Forward Dash", "18716664096"}, {"Homerun", "18716667710"},
+}
+for _, anim in pairs(MetalBatAnimations) do
+    CreateAnimationButton(MetalBatSection, anim[1], anim[2])
+end
+
+-- ===== Garou Animations =====
+local GarouSection = Tab3:CreateSection("Garou Animations")
+local GarouAnimations = {
+    {"Spawn", "18715986914"}, {"M1 (1)", "18715994424"}, {"M1 (2)", "18715998497"}, {"M1 (3)", "18715999597"},
+    {"M1 (4)", "18716001119"}, {"Wall Combo", "18716197426"}, {"Wall Combo Victim", "18716219425"},
+    {"Counter Fail", "18716004830"}, {"Counter", "18716009111"}, {"Counter Finisher", "18716119248"}, {"Counter Victim", "18716263793"},
+    {"Lethal Whirlwind Fail", "18716015787"}, {"Lethal Whirlwind", "18716022049"}, {"Lethal Whirlwind Victim", "18716037846"},
+    {"Lethal Whirlwind Finisher", "18716149704"}, {"Hunter's Grasp Fail", "18716028410"}, {"Hunter's Grasp", "18716033506"},
+    {"Hunter's Grasp Finisher", "18722373118"}, {"Flowing Water Fail", "18716111834"}, {"Flowing Water", "18716113810"},
+    {"Flowing Water Finisher", "18716123984"}, {"Awk", "18716153127"}, {"Crushed Rock Fail", "18716164812"}, {"Crushed Rock", "18716169065"},
+    {"Crushed Rock Victim", "18716216313"}, {"Rock Splitting", "18716184869"}, {"Rock Splitting Victim", "18962005845"},
+    {"The Final Hunt Start", "12463072679"}, {"The Final Hunt", "12467789963"}, {"Water Stream Rock Smashing", "12460977270"},
+    {"Crushing Rock Variant startup", "72451715583225"}, {"Crushing Rock Variant Hit", "135104210400610"}, {"Crushing Rock Variant Lunge", "135104210400610"},
+    {"Crushing Rock Variant Victim dash", "80910065447206"}, {"Crushing Rock Variant Victim", "129945907044125"},
+}
+for _, anim in pairs(GarouAnimations) do
+    CreateAnimationButton(GarouSection, anim[1], anim[2])
+end
+
+-- ===== Saitama Animations =====
+local SaitamaSection = Tab3:CreateSection("Saitama Animations")
+local SaitamaAnimations = {
+    {"Spawn", "18715800557"}, {"Block", "18715874793"}, {"M1 (1)", "18715812734"}, {"M1 (2)", "18715817240"},
+    {"M1 (3)", "18715818827"}, {"M1 (4)", "18715820628"}, {"Wall Combo", "18715829082"}, {"Awk Wall Combo", "125518819402716"},
+    {"Awk Wall Combo Victim", "71377448806509"}, {"Wall Combo Victim", "18715946847"}, {"Consecutive Normal Punches", "18715831781"},
+    {"Normal Uppercut", "18715837899"}, {"Normal Punch", "18715842262"}, {"Normal Shove", "18715845645"}, {"Awk", "12447707844"},
+    {"Awk Death Counter", "18715881168"}, {"Awk Table Flip", "18715884857"}, {"Awk Omni", "18715891164"}, {"Awk Omni Victim", "13916238703"},
+    {"Awk Serious Punch", "18715898844"}, {"Serious Trash Can start", "125863680384625"}, {"Serious Trash Can Hit", "79761806706382"},
+    {"Awk Uppercut", "140164642047188"}, {"Awk Uppercut Victim", "71377448806509"},
+}
+for _, anim in pairs(SaitamaAnimations) do
+    CreateAnimationButton(SaitamaSection, anim[1], anim[2])
+end
+
+-- ===== Suiryu Animations =====
+local SuiryuSection = Tab3:CreateSection("Suiryu Animations")
+local SuiryuAnimations = {
+    {"Vanishing Kick", "17838006839"}, {"Vanishing Kick Finisher", "18464372850"}, {"Vanishing Kick Finisher Victim", "18464373968"},
+    {"Spawn", "18435303746"}, {"Head First", "18182425133"}, {"Victim Head First", "18182400897"}, {"Bullet Barrage Start", "18716581594"},
+    {"Bullet Barrage Finisher Start (Air)", "18464351556"}, {"Bullet Barrage Finisher End (Land)", "18464356233"}, {"Bullet Barrage Finisher Victim (Air)", "18464353914"},
+    {"Bullet Barrage Finisher Victim (Land)", "18464358704"}, {"Wall Combo Victim", "18181159825"}, {"Wall Combo", "18181589384"}, {"Head First Start", "18179181663"},
+    {"Head First Victim Air", "18171728577"}, {"Whirlwind Drop", "18716588373"}, {"Whirlwind Drop Finisher", "18464362124"}, {"M1 (1)", "18716133404"},
+    {"M1 (2)", "18716143973"}, {"M1 (3)", "18169291044"}, {"M1 (4)", "18716149223"}, {"Awk", "18435535291"}, {"Awk End", "18435383478"},
+    {"Awk Rising Fist", "18896127525"}, {"Awk Rising Fist Miss", "18896124320"}, {"Awk Rising Fist Victim", "18896121004"}, {"Awk Twin Fangs Miss", "18896124320"},
+    {"Awk Twin Fangs", "18896229321"}, {"Awk Twin Fangs Victim", "18896222853"}, {"Awk Earth Splitting Strike/end", "18897118507"}, {"Awk Earth Splitting Strike Miss", "18897119503"},
+    {"Awk Earth Splitting Strike Victim", "18897120868"}, {"Awk Earth Splitting Strike/RUNNING", "18897115785"}, {"Last Strike Start up", "106755459092436"},
+    {"Last Strike Miss", "102814369422840"}, {"Last Strike Running", "95575238948327"}, {"Last Strike hit", "75502010126640"}, {"Last Strike Hit end", "119325239112989"},
+    {"Last Strike Victim", "85813428590588"}, {"Grand Fissure Miss", "129651400898906"}, {"Grand Fissure Hit", "94020267622363"}, {"Grand F Victim", "137624104134020"},
+    {"Grand F Wall miss", "100933578899042"}, {"Wall hit", "133306251262378"}, {"Dragon anim Grand fissure", "114804712485842"},
+}
+for _, anim in pairs(SuiryuAnimations) do
+    CreateAnimationButton(SuiryuSection, anim[1], anim[2])
+end
+
+-- ===== Zombie Man Animations =====
+local ZombieManSection = Tab3:CreateSection("Zombie Man Animations")
+local ZombieManAnimations = {
+    {"M1 (1)", "18462088986"}, {"M1 (2)", "18462089757"},  -- *UNRELEASED*
+}
+for _, anim in pairs(ZombieManAnimations) do
+    CreateAnimationButton(ZombieManSection, anim[1], anim[2])
+end
+
+-- ===== Tech Prodigy Animations =====
+local TechProdigySection = Tab3:CreateSection("Tech Prodigy Animations")
+local TechProdigyAnimations = {
+    {"M1 (1)", "123005629431309"}, {"M1 (2)", "100059874351664"}, {"M1 (3)", "104895379416342"}, {"M1 (4)", "134775406437626"},
+    {"Spawn Anim", "119169968232874"}, {"WallCombo", "131492147325921"}, {"WallCombo Victim", "105493146334026"},
+    {"Weboom Deploy", "113166426814229"}, {"Plasma Cannon Startup", "116753755471636"}, {"Charge", "116153572280464"}, {"Shoot", "114095570398448"},
+    {"Trinity Tear Startup / Walk", "77509627104305"}, {"Player Hit", "114586157428274"}, {"Jump", "98542310119798"}, {"Victim Jump", "137356827034236"},
+    {"Double Trouble Miss", "138443750790136"}, {"UserThrow", "94395585475029"}, {"VictimThrown", "86490931396573"}, {"Robot Animation", "136442814534463"},
+}
+for _, anim in pairs(TechProdigyAnimations) do
+    CreateAnimationButton(TechProdigySection, anim[1], anim[2])
+end
+
+-- ===== The Frozen Soul Animations =====
+local FrozenSoulSection = Tab3:CreateSection("The Frozen Soul Animations")
+local FrozenSoulAnimations = {
+    {"Equipping", "95000469063288"}, {"Permafrost", "100558589307006"}, {"Frost Forge", "137561511768861"}, {"Freezing Path", "112620365240235"},
+    {"Freezing Path Hit", "108974035701442"}, {"Freezing Path Victim", "111487401271653"}, {"Sub-Zero Slash Storm Awk", "134494086123052"},
+    {"Spiraling Wind Start", "70512853043908"}, {"Spiraling Wind Hit", "81827172076105"}, {"Judgement Chain Start-Up / Landed", "75547590335774"}, {"Judgement Chain Miss", "110898544937927"},
+}
+for _, anim in pairs(FrozenSoulAnimations) do
+    CreateAnimationButton(FrozenSoulSection, anim[1], anim[2])
+end
+
+-- ===== Sonic Animations =====
+local SonicSection = Tab3:CreateSection("Sonic Animations")
+local SonicAnimations = {
+    {"Spawn Anim", "18715714749"}, {"Sheathe", "13377153603"}, {"Wall Combo", "18715756612"}, {"Wall Combo Victim", "18715943219"},
+    {"Block", "18715728313"}, {"M1 (1)", "18715736372"}, {"M1 (2)", "18715743167"}, {"M1 (3)", "18715745239"}, {"M1 (4)", "18715747362"},
+    {"Flash strike", "13376869471"}, {"Whirlwind Kick", "13294790250"}, {"Whirlwind Kick Finisher", "76530443909428"}, {"Whirlwind Kick Finisher Victim", "106808326217356"},
+    {"Scatter Start", "13376962659"}, {"Scatter end", "13365849295"}, {"Exploding Shuriken", "13501296372"}, {"Exploding Shuriken Variant", "13556985475"},
+    {"Awk Four Fold Flash Strike", "18715789130"}, {"Awk Straight On", "18715777712"}, {"Awk Twinblade Rush", "18715770173"}, {"Awk Twinblade Rush Victim", "18716435262"},
+    {"Awk Start", "13499771836"}, {"Awk End", "13497875049"}, {"Run only hand", "13379404053"},
+}
+for _, anim in pairs(SonicAnimations) do
+    CreateAnimationButton(SonicSection, anim[1], anim[2])
+end
+
+-- ===== Saitama Animations =====
+local SaitamaSection = Tab3:CreateSection("Saitama Animations")
+local SaitamaAnimations = {
+    {"Spawn", "18715800557"}, {"Block", "18715874793"}, {"M1 (1)", "18715812734"}, {"M1 (2)", "18715817240"}, {"M1 (3)", "18715818827"}, {"M1 (4)", "18715820628"},
+    {"Wall Combo", "18715829082"}, {"Awk Wall Combo", "125518819402716"}, {"Awk Wall Combo Victim", "71377448806509"}, {"Wall Combo Victim", "18715946847"},
+    {"Consecutive Normal Punches", "18715831781"}, {"Normal Uppercut", "18715837899"}, {"Normal Punch", "18715842262"}, {"Normal Shove", "18715845645"},
+    {"Awk", "12447707844"}, {"Awk Death Counter", "18715881168"}, {"Awk Table Flip", "18715884857"}, {"Awk Omni", "18715891164"}, {"Awk Omni Victim", "13916238703"},
+    {"Awk Serious Punch", "18715898844"}, {"Serious Trash Can start", "125863680384625"}, {"Serious Trash Can Hit", "79761806706382"},
+    {"Awk Uppercut", "140164642047188"}, {"Awk Uppercut Victim", "71377448806509"},
+}
+for _, anim in pairs(SaitamaAnimations) do
+    CreateAnimationButton(SaitamaSection, anim[1], anim[2])
+end
+
+-- ===== Suiryu Animations =====
+local SuiryuSection = Tab3:CreateSection("Suiryu Animations")
+local SuiryuAnimations = {
+    {"Vanishing Kick", "17838006839"}, {"Vanishing Kick Finisher", "18464372850"}, {"Vanishing Kick Finisher Victim", "18464373968"},
+    {"Spawn", "18435303746"}, {"Head First", "18182425133"}, {"Victim Head First", "18182400897"}, {"Bullet Barrage Start", "18716581594"},
+    {"Bullet Barrage Finisher Start (Air)", "18464351556"}, {"Bullet Barrage Finisher End (Land)", "18464356233"}, {"Bullet Barrage Finisher Victim (Air)", "18464353914"},
+    {"Bullet Barrage Finisher Victim (Land)", "18464358704"}, {"Wall Combo Victim", "18181159825"}, {"Wall Combo", "18181589384"},
+    {"Head First Start", "18179181663"}, {"Head First Victim Air", "18171728577"}, {"Whirlwind Drop", "18716588373"}, {"Whirlwind Drop Finisher", "18464362124"},
+    {"M1 (1)", "18716133404"}, {"M1 (2)", "18716143973"}, {"M1 (3)", "18169291044"}, {"M1 (4)", "18716149223"},
+    {"Awk", "18435535291"}, {"Awk End", "18435383478"}, {"Awk Rising Fist", "18896127525"}, {"Awk Rising Fist Miss", "18896124320"}, {"Awk Rising Fist Victim", "18896121004"},
+    {"Awk Twin Fangs Miss", "18896124320"}, {"Awk Twin Fangs", "18896229321"}, {"Awk Twin Fangs Victim", "18896222853"},
+    {"Awk Earth Splitting Strike/end", "18897118507"}, {"Awk Earth Splitting Strike Miss", "18897119503"}, {"Awk Earth Splitting Strike Victim", "18897120868"}, {"Awk Earth Splitting Strike/RUNNING", "18897115785"},
+    {"Last Strike Start up", "106755459092436"}, {"Last Strike Miss", "102814369422840"}, {"Last Strike Running", "95575238948327"}, {"Last Strike hit", "75502010126640"}, {"Last Strike Hit end", "119325239112989"}, {"Last Strike Victim", "85813428590588"},
+}
+for _, anim in pairs(SuiryuAnimations) do
+    CreateAnimationButton(SuiryuSection, anim[1], anim[2])
+end
+
+-- ===== Metal Bat Animations =====
+local MetalBatSection = Tab3:CreateSection("Metal Bat Animations")
+local MetalBatAnimations = {
+    {"Spawn", "18716634245"}, {"Wall Combo", "18716750744"}, {"Wall Combo Victim", "18716782310"}, {"Block", "18716638776"},
+    {"M1 (1)", "18716641152"}, {"M1 (2)", "18716644788"}, {"M1 (3)", "18716646083"}, {"M1 (4)", "18716647575"},
+    {"Grand Slam", "18716650993"}, {"Grand Slam Air", "18716655757"}, {"Grand Slam Hit Floor", "18716657427"}, {"Grand Slam Air Finisher", "18716690247"}, {"Grand Slam Air Finisher Victim", "18716777568"},
+    {"Foul Ball", "18716660379"}, {"Foul Ball Land", "18716683497"}, {"Foul Ball Finisher", "18716684967"}, {"Foul Ball Victim", "18716813950"}, {"Foul Ball Victim Finisher", "18716819019"},
+    {"Forward Dash", "18716664096"}, {"Homerun", "18716667710"}, {"Homerun Finisher", "18716670225"}, {"Homerun Fail", "18716673362"}, {"Homerun Victim", "18716795505"},
+    {"Beatdown", "18716698376"}, {"Beatdown Victim", "18716788085"}, {"Beatdown Finisher", "18716701716"}, {"Idle Save Bat", "18716708244"}, {"Awk + Save Bat", "18716713510"}, {"Awk", "18716765679"},
+    {"Death Blow", "18716734026"}, {"Death Blow Start", "18716737190"}, {"Death Blow Victim Melee", "18716739997"}, {"Death Blow Victim", "18716769631"},
+}
+for _, anim in pairs(MetalBatAnimations) do
+    CreateAnimationButton(MetalBatSection, anim[1], anim[2])
+end
+
+-- TAB 3: KJ Animations
+local Tab3 = Window:CreateTab("KJ Animations")
+
+-- =====================
+-- 1. Spawn
+-- =====================
+Section3:CreateButton("Spawn Player", function()
+local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://17325160621"
+humanoid:LoadAnimation(anim):Play()
+end)
+
+
+-- =====================
+-- 2. M1's in Order
+-- =====================
+local M1s = {
+   {"M1 (1)", "17325510002"},
+   {"M1 (2)", "17325513870"},
+   {"M1 (3)", "17325522388"},
+   {"M1 (4)", "17325537719"},
+   {"Uppercut", "10503381238"},
+   {"Wall Combo", "10503381238"},
+   {"Wall Combo Victim", "18447915110"},
+}
+for _, data in ipairs(M1s) do
+   Section3:CreateButton({
+       Name = data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
+
+-- =====================
+-- 3. Ravage
+-- =====================
+local Ravage = {
+   {"Ravage Attempt", "16945573694"},
+   {"Ravage Player", "16945550029"},
+   {"Ravage Victim", "16945557433"},
+}
+for _, data in ipairs(Ravage) do
+   Section3:CreateButton({
+       Name = data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
+
+-- =====================
+-- 4. Swift Sweep
+-- =====================
+local SwiftSweep = {
+   {"Start-Up", "16944265635"},
+   {"Player", "16944345619"},
+   {"Victim", "16944744186"},
+   {"Victim Knockback", "10471478869"},
+}
+for _, data in ipairs(SwiftSweep) do
+   Section3:CreateButton("Swift Sweep " .. data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
+
+-- =====================
+-- 5. Collateral Ruin
+-- =====================
+local CollateralRuin = {
+   {"Player", "17325254223"},
+   {"Victim", "17344349087"},
+   {"Other Victim 1", "17344348109"},
+   {"Other Victim 2", "17344347316"},
+}
+for _, data in ipairs(CollateralRuin) do
+   Section3:CreateButton({
+       Name = "Collateral Ruin " .. data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
+
+-- =====================
+-- 6. Spiraling Storm
+-- =====================
+local SpiralingStorm = {
+   {"Start-Up", "78521642007560"},
+   {"Player", "81827172076105"},
+   {"Victim", "116005409979614"},
+}
+for _, data in ipairs(SpiralingStorm) do
+   Section3:CreateButton({
+       Name = "Spiraling Storm " .. data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
+
+-- =====================
+-- 7. 20 Series
+-- =====================
+local Series20 = {
+   {"Awaken", "17140902079"},
+   {"Awaken Walk Variant", "18445236460"},
+}
+for _, data in ipairs(Series20) do
+   Section3:CreateButton({
+       Name = "20 Series " .. data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
+
+-- =====================
+-- 8. Stoic Bomb
+-- =====================
+Section3:CreateButton({
+   Name = "Stoic Bomb Player", function()
+local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://17141153099"
+humanoid:LoadAnimation(anim):Play()
+end)
+
+
+-- =====================
+-- 9. 20-20-20 Dropkick
+-- =====================
+local Dropkick = {
+   {"Start-Up", "17354976067"},
+   {"Player", "17420452843"},
+   {"Victim", "17363256069"},
+}
+for _, data in ipairs(Dropkick) do
+   Section3:CreateButton({
+       Name = "20-20-20 Dropkick " .. data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
+
+-- =====================
+-- 10. Five Seasons
+-- =====================
+local FiveSeasons = {
+   {"Start-Up", "18462892217"},
+   {"Teleport", "18461540788"},
+   {"Attack", "18462894593"},
+}
+for _, data in ipairs(FiveSeasons) do
+   Section3:CreateButton({
+       Name = "Five Seasons " .. data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
+
+-- =====================
+-- 11. Unlimited Flexworks
+-- =====================
+local Flexworks = {
+   {"Player", "77727115892579"},
+   {"Camera", "119909816006942"},
+}
+for _, data in ipairs(Flexworks) do
+   Section3:CreateButton({
+       Name = "Unlimited Flexworks " .. data[1],
+       Callback = function()
+           local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+           local anim = Instance.new("Animation")
+           anim.AnimationId = "rbxassetid://" .. data[2]
+           humanoid:LoadAnimation(anim):Play()
+       end,
+   })
+end
