@@ -51,62 +51,7 @@ Rayfield:Notify({
 local Section = Tab1:CreateSection("Limited emotes")
 
 local Button = Tab1:CreateButton({
-   Name = "True Aura (experimento)",
-   Callback = function()
-       local player = game.Players.LocalPlayer
-local char = player.Character or player.CharacterAdded:Wait()
-local humanoid = char:WaitForChild("Humanoid")
-
-local anim = Instance.new("Animation")
-anim.AnimationId = "rbxassetid://116187503451999"
-humanoid:LoadAnimation(anim):Play()
-
-local e = Instance.new("Accessory")
-e.Name = "#EmoteHolder_"..math.random(1e5)
-e.Parent = char
-e:SetAttribute("EmoteProperty", true)
-
-require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
-    Character = char,
-    vfxName = "True Aura",
-    SpecificModule = game.ReplicatedStorage.Emotes.VFX,
-    AnimSent = 114451374603244,
-    RealBind = e
-}
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = Tab1:CreateButton({
-   Name = "Divine Form",
-   Callback = function()
-       local player = game.Players.LocalPlayer
-local char = player.Character or player.CharacterAdded:Wait()
-local humanoid = char:WaitForChild("Humanoid")
-
-local anim = Instance.new("Animation")
-anim.AnimationId = "rbxassetid://116187503451999"
-humanoid:LoadAnimation(anim):Play()
-
-local e = Instance.new("Accessory")
-e.Name = "#EmoteHolder_"..math.random(1e5)
-e.Parent = char
-e:SetAttribute("EmoteProperty", true)
-
-require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
-    Character = char,
-    vfxName = "Divine Form",
-    SpecificModule = game.ReplicatedStorage.Emotes.VFX,
-    AnimSent = 114451374603244,
-    RealBind = e
-}
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-
-local Button = Tab1:CreateButton({
-   Name = "Boundless Rage",
+   Name = "Boundles Rage",
    Callback = function()
        local player = game.Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait()
@@ -123,7 +68,7 @@ e:SetAttribute("EmoteProperty", true)
 
 require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
     Character = char,
-    vfxName = "Boundless Rage",
+    vfxName = "Boundles Rage",
     SpecificModule = game.ReplicatedStorage.Emotes.VFX,
     AnimSent = 114451374603244,
     RealBind = e
@@ -153,43 +98,34 @@ local Button = Tab1:CreateButton({
    Callback = function()
        local p = game.Players.LocalPlayer
 
--- Función para reproducir animación y VFX al respawnear
-local function playAnimAndVFX(char)
-    local h = char:WaitForChild("Humanoid")
+-- Cuando tu personaje cargue o reaparezca
+p.CharacterAdded:Connect(function(c)
+    c:WaitForChild("Humanoid")
 
-    -- Animación
+    local h = c:FindFirstChildOfClass("Humanoid")
+    if not h then return end
+
+    -- Animación nueva
     local a = Instance.new("Animation")
-    a.AnimationId = "rbxassetid://113876851900426"
-    h:LoadAnimation(a):Play()
+    a.AnimationId = "rbxassetid://129361308786827"
+    local track = h:LoadAnimation(a)
+    track:Play()
 
     -- Accesorio dummy
     local e = Instance.new("Accessory")
     e.Name = "#EmoteHolder_"..math.random(1e5)
-    e.Parent = char
+    e.Parent = c
     e:SetAttribute("EmoteProperty", true)
 
-    -- VFX "Final Sparks"
+    -- VFX "Final Stand"
     require(game.ReplicatedStorage.Emotes.VFX):MainFunction{
-        Character = char,
+        Character = c,
         vfxName = "Final Stand",
         SpecificModule = game.ReplicatedStorage.Emotes.VFX,
         AnimSent = 129361308786827,
         RealBind = e
     }
-end
-
--- Ejecutar al cargar el personaje
-p.CharacterAdded:Connect(function(char)
-    char:WaitForChild("Humanoid")
-    task.wait(1) -- pequeño delay para que cargue todo
-    playAnimAndVFX(char)
 end)
-
--- Si ya tiene personaje, ejecutamos de inmediato
-if p.Character then
-    task.wait(1)
-    playAnimAndVFX(p.Character)
-end
    -- The function that takes place when the button is pressed
    end,
 })
